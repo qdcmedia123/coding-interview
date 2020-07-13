@@ -1,0 +1,340 @@
+{
+   "data":{
+      "success":true,
+      "code":200,
+      "data":{
+         "rows":[
+            {
+               "email":"mokaid83@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"66bee4d6-46aa-4983-a46b-c9494ed60c22.1573108797940",
+               "value":4.41,
+               "returnValue":-0.25,
+               "returnRatio":0,
+               "firstName":"Fouad",
+               "lastName":"Dbouk",
+               "country":"ARE",
+               "phone":"0502732286"
+            },
+            {
+               "email":"bashar.nassour1@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"very_aggressive",
+               "drivewealth_account_id":"8ff1f6b8-b407-4458-b71a-b9a812389285.1573653472492",
+               "value":95.14999999999999,
+               "returnValue":7.55,
+               "returnRatio":8.45,
+               "firstName":"Bashar",
+               "lastName":"Nassour",
+               "country":"ARE",
+               "phone":"505689050"
+            },
+            {
+               "email":"bilalmajbour@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"68abc2b1-1db1-4c4e-8bf4-3f5b7c9ad6ba.1573109571801",
+               "value":1688.14,
+               "returnValue":15.14,
+               "returnRatio":0.92,
+               "firstName":"bilal",
+               "lastName":"majbour",
+               "country":"ARE",
+               "phone":"0509641641"
+            },
+            {
+               "email":"ynuseibeh@yahoo.com",
+               "addressCountry":"United States",
+               "risk_level":"very_aggressive",
+               "drivewealth_account_id":"8242b300-d392-4aea-a39e-9001471fddb0.1573110821511",
+               "value":2053.2000000000003,
+               "returnValue":179.66,
+               "returnRatio":8.93,
+               "firstName":"Yacoub",
+               "lastName":"Nuseibeh",
+               "phone":"3055177000",
+               "country":"USA"
+            },
+            {
+               "email":"ahsan9999@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"balanced",
+               "drivewealth_account_id":"d8080e83-7f36-4201-9181-966e0458928b.1573112496458",
+               "value":97.19000000000001,
+               "returnValue":4.86,
+               "returnRatio":5.21,
+               "firstName":"Ahsan",
+               "lastName":"Mahmood",
+               "country":"ARE",
+               "phone":"508721077"
+            },
+            {
+               "email":"meera.majbour@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"2df25c5f-c5ee-48dd-9b31-f7be2ffe8c59.1573129679432",
+               "value":516.24,
+               "returnValue":48.5,
+               "returnRatio":9.7,
+               "firstName":"mira",
+               "lastName":"majbour",
+               "country":"ARE",
+               "phone":"561704774"
+            },
+            {
+               "email":"s.ravinet@interco.ae",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"semi_aggressive",
+               "drivewealth_account_id":"189b2099-7f69-408d-b027-d22e08dbfc2a.1573240318860",
+               "value":512.18,
+               "returnValue":37.9,
+               "returnRatio":7.55,
+               "firstName":"sebastien",
+               "lastName":"ravinet",
+               "country":"ARE",
+               "phone":"0506406625"
+            },
+            {
+               "email":"rskralmehairi@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"b42e584e-f3c0-4c20-a228-ffcf2ef9d551.1576412686674",
+               "value":5066.84,
+               "returnValue":402.09,
+               "returnRatio":8.09,
+               "firstName":"Rashed",
+               "lastName":"Almheiri",
+               "country":"ARE",
+               "phone":"0508111493"
+            },
+            {
+               "email":"boneyv@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"bff48e0c-6966-49b2-a516-30da9b7b8f7c.1579021068330",
+               "value":105.36999999999999,
+               "returnValue":4.21,
+               "returnRatio":4.29,
+               "firstName":"Boney",
+               "lastName":"Varghese",
+               "country":"ARE",
+               "phone":"505450436"
+            },
+            {
+               "email":"abjaar@yahoo.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"balanced",
+               "drivewealth_account_id":"c2e4abbc-12b0-40d4-8073-1762dac3c76d.1582869269563",
+               "value":3246.1200000000003,
+               "returnValue":243.23,
+               "returnRatio":7.59,
+               "firstName":"Alexandra",
+               "lastName":"Jaar",
+               "country":"ARE",
+               "phone":"508127263"
+            },
+            {
+               "email":"dr.m.alfadel@gmail.com",
+               "addressCountry":"Saudi Arabia",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"b5119553-dc37-4ff6-b2aa-da964e0c06da.1578774083828",
+               "value":2944.8700000000003,
+               "returnValue":224.3,
+               "returnRatio":7.76,
+               "firstName":"mohammad",
+               "lastName":"alkahtani",
+               "country":"ARE",
+               "phone":"522222540"
+            },
+            {
+               "email":"babani.deepesh@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"b1ca7505-61ee-4aea-8bc6-d04e4d57c738.1578917608647",
+               "value":485.97,
+               "returnValue":36.78,
+               "returnRatio":7.79,
+               "firstName":"Deepesh",
+               "lastName":"Babani",
+               "country":"ARE",
+               "phone":"501008350"
+            },
+            {
+               "email":"roshar89@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"34f5efe6-751c-4906-a561-242b6ec6bfe6.1578998324923",
+               "value":43.620000000000005,
+               "returnValue":3.28,
+               "returnRatio":8.34,
+               "firstName":"Rohit",
+               "lastName":"Sharma",
+               "country":"ARE",
+               "phone":"0502196521"
+            },
+            {
+               "email":"radandri@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"ddd6631d-701c-4c7e-aa53-e8747bb9aced.1587534437478",
+               "value":200.96,
+               "returnValue":5.96,
+               "returnRatio":3.12,
+               "firstName":"Andriy",
+               "lastName":"Radchenko",
+               "country":"ARE",
+               "phone":"562167314"
+            },
+            {
+               "email":"ggzerardo9994@outlook.com",
+               "addressCountry":"United States",
+               "risk_level":"balanced",
+               "drivewealth_account_id":"9b945f10-65ab-4079-8cb9-d2909c2ecd05.1579758545637",
+               "value":1,
+               "returnValue":0,
+               "returnRatio":0,
+               "firstName":"Gerardo",
+               "lastName":"Gonzalez Caraballo",
+               "country":"USA",
+               "phone":"4409905670"
+            },
+            {
+               "email":"mhsmazrouei@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"very_aggressive",
+               "drivewealth_account_id":"8da24fa6-e999-47cc-95d7-793b287ea6e0.1583173360077",
+               "value":98.01,
+               "returnValue":10.17,
+               "returnRatio":11.23,
+               "firstName":"Mohamed",
+               "lastName":"Almazrouei",
+               "country":"ARE",
+               "phone":"0504421100"
+            },
+            {
+               "email":"Oraib.kazimi@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"1a3317d1-02d2-428b-911c-b2239f93485f.1587233037848",
+               "value":4970.88,
+               "returnValue":149.41,
+               "returnRatio":3.09,
+               "firstName":"Oraib",
+               "lastName":"Kazimi",
+               "country":"ARE",
+               "phone":"0526208619"
+            },
+            {
+               "email":"Syedsaadbinasad@gmail.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"20fb1b51-7c10-48f4-aee7-439a02776758.1584396961134",
+               "value":142.95000000000002,
+               "returnValue":19.81,
+               "returnRatio":14.72,
+               "firstName":"Saad",
+               "lastName":"Asad",
+               "country":"ARE",
+               "phone":"0561727577"
+            },
+            {
+               "email":"ayyubp@yahoo.com",
+               "addressCountry":"United Arab Emirates",
+               "risk_level":"aggressive",
+               "drivewealth_account_id":"e3972a3e-0924-405a-8f2f-f58535d47c73.1584515986050",
+               "value":1307.32,
+               "returnValue":57.79,
+               "returnRatio":4.56,
+               "firstName":"Ayyub",
+               "lastName":"Logde",
+               "country":"ARE",
+               "phone":"0507994061"
+            },
+            {
+               "email":"madmax4836@gmail.com",
+               "addressCountry":"Saudi Arabia",
+               "risk_level":"semi_aggressive",
+               "drivewealth_account_id":"a3b21489-a6e3-45a8-a116-023a2889c957.1584656028845",
+               "value":343.12,
+               "returnValue":11.65,
+               "returnRatio":3.55,
+               "firstName":"Mohammed",
+               "lastName":"Kutbi",
+               "country":"SAU",
+               "phone":"565506106"
+            },
+            {
+               "email":"clintonnguyen357@gmail.com",
+               "addressCountry":"United States",
+               "risk_level":"very_aggressive",
+               "drivewealth_account_id":"a990bb5a-1457-4a1b-b5e6-b236a6bbe8b5.1585513676151",
+               "value":282.77000000000004,
+               "returnValue":16.72,
+               "returnRatio":6.1,
+               "firstName":"Clinton",
+               "lastName":"Nguyen",
+               "phone":"6692647442",
+               "country":"USA"
+            }
+         ],
+         "clientTotals":{
+            "aum":23642.65,
+            "activeAccounts":21
+         },
+         "menus":{
+            "country":{
+               "0":"United Arab Emirates",
+               "3":"United States",
+               "10":"Saudi Arabia"
+            },
+            "risk_level":{
+               "0":"aggressive",
+               "1":"very_aggressive",
+               "4":"balanced",
+               "6":"semi_aggressive"
+            }
+         }
+      },
+      "message":""
+   },
+   "status":200,
+   "statusText":"OK",
+   "headers":{
+      "cache-control":"no-cache, private",
+      "connection":"close",
+      "content-encoding":"gzip",
+      "content-type":"application/json",
+      "date":"Tue, 05 May 2020 13:24:45 GMT",
+      "server":"nginx/1.14.0 (Ubuntu)",
+      "transfer-encoding":"chunked",
+      "vary":"Accept-Encoding",
+      "x-content-type-options":"nosniff",
+      "x-frame-options":"SAMEORIGIN",
+      "x-powered-by":"Express",
+      "x-ratelimit-limit":"60",
+      "x-ratelimit-remaining":"59",
+      "x-xss-protection":"1; mode=block"
+   },
+   "config":{
+      "url":"/api/v1/portfoliValuesList",
+      "method":"get",
+      "headers":{
+         "Accept":"application/json, text/plain, */*",
+         "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZXN1YnMud2VhbHRoZmFjZS5jYVwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1ODg2NjM1NDEsImV4cCI6MTU4ODY5OTU0MSwibmJmIjoxNTg4NjYzNTQxLCJqdGkiOiJFajduaTA5aXM5WDdWSmVHIiwic3ViIjoiNWUyYWVkYzE0NDc0ZDczYWZkMTY0MjIyIiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.Pag7beYx22N7UM85DC6cD0Bwrz7ZHHvORl4D03KS-cs"
+      },
+      "transformRequest":[
+         null
+      ],
+      "transformResponse":[
+         null
+      ],
+      "timeout":0,
+      "xsrfCookieName":"XSRF-TOKEN",
+      "xsrfHeaderName":"X-XSRF-TOKEN",
+      "maxContentLength":-1
+   },
+   "request":{
+
+   }
+}
