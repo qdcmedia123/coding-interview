@@ -51,4 +51,40 @@ array = array.concat(itemToReplace);
 
 // Monotonice array 
 const isMono = [1, 2, 3, 4].every(function(e, i, a) { if (i) return e > a[i-1]; else return true; });
-console.log(isMono)
+//console.log(isMono)
+
+
+
+// SMALLEST DIFFERENT IN SINGLE ARRAY 
+function getMin(data) {
+  return data.reduce(function(r, e, i) {
+    let absR = Math.abs(r), absE = Math.abs(e);
+    if (absR > absE || i == 0 || (absR == absE && e > r)) r = e
+    return r
+  })
+}
+
+/*console.log(getMin([1.5, -1, 0, 5, 5.5, -4]))
+console.log(getMin([1.5, -1, 5, 5.5, -4]))
+console.log(getMin([1, -1, 5, 5.5, -4]))
+console.log(getMin([-1, 1, 5, 5.5, -4]))*/
+
+// SMALLEST DIFFERENT BETWEEN TWO ARRAY INTEGER 
+function smallestDifference(arr1, arr2){
+  if(arr1.length === 0 || arr2.length === 0){ return -1; }
+  let result = Number.MAX_SAFE_INTEGER; // (2^53) - 1
+  
+  for(let i = 0; i < arr1.length; i++){
+    for(let j = 0; j < arr2.length; j++){
+      if(Math.abs(arr1[i] - arr2[j]) < result){
+        result = Math.abs(arr1[i] - arr2[j]);
+      }
+    }    
+  }
+  return result;
+}
+
+const array2 = [1, 3, 15, 65];
+const array1 = [40, 25, 5];
+
+console.log(smallestDifference(array1, array2));

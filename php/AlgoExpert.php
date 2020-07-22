@@ -54,6 +54,3 @@ function maxProfit($price, $n, $k)
 // This code is contributed by nitin mittal 
 ?> 
 
-<?php
-
-?>

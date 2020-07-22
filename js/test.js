@@ -1,45 +1,35 @@
-// Write function 
-//console.log(twoSum([2, 7, 11, 15], 9));
+// SmallestDifferetn(arr1, arr2)
+function smallestDifferent(array1, array2) {
+	if(array1.lenght === 0 || array2.length === 0) {
+		return -1;
+	}
+	let result = Number.MAX_SAFE_INTEGER;
 
-function twoSum(arr, target) {
-	const arrLength = arr.length;
-	const result = [];
-
-	for(var i = 0; i < arrLength; i++) {
-		for(j = i+1; j < arrLength; j++) {
-          if(arr[i] + arr[j] === target){
-          	result.push(i);
-          	result.push(j)
-          }
+	for(let i = 0; i < array1.length; i++) {
+		for(let j = 0; j < array2.length; j++) {
+			if(Math.abs(array1[i] - array2[j]) < result) {
+				result = Math.abs(array1[i] - array2[j]);
+			}
 		}
 	}
+
 	return result;
 }
 
-console.log(twoSum([2, 7, 11, 15], 9));
+const array2 = [1, 3, 15, 65];
+const array1 = [40, 25, 5];
 
-// another way 
-const twoSum_On_Better = (arr, target) => {
-	let numberObjet = {};
-	let length = arr.length;
+console.log(smallestDifferent(array1, array2));
 
-	for(var i = 0; i < length; i++) {
-		numberObjet[arr[i]] = i;
-	}
-
-	for(var i = 0; i < arr.length; i++) {
-		let diff = arr[i] - target;
-		if(numberObjet.hasOwnProperty(diff) && numberObjet[diff] !== i) {
-			return [i, numberObjet[diff]]
-		}
-	}
-
+// Smallest in single array 
+function getMin(data) {
+	return data.reduce(function(r,e,i) {
+		let absR = Math.abs(r), absE = Math.abs(e);
+		if(absR > absE || i === 0 || (absR === absE && e > r)) r = e
+			return r
+	})
 }
 
-
-// Monotonice array 
-const isMono = [1,2,3].every(function(e, i, a) {
-	if(i)  return e > a[i-1]; else return true;
-})
-
-console.log(isMono)
+console.log(getMin([1,2,3]))
+console.log(getMin([1, -1, 5, 5.5, -4]))
+console.log(getMin([-1, 1, 5, 5.5, -4]))
