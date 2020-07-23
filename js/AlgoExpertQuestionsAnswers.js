@@ -1,8 +1,3 @@
-/*Example:
-Given nums = [2, 7, 11, 15], target = 9,
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].*/
-//https://medium.com/@paulrohan/solving-the-classic-two-sum-and-three-sum-problem-in-javascript-7d5d1d47db03
 
 
 const twoSum = (arr, target) => {
@@ -88,3 +83,49 @@ const array2 = [1, 3, 15, 65];
 const array1 = [40, 25, 5];
 
 console.log(smallestDifference(array1, array2));
+
+
+// Sub Array Sort 
+
+
+
+const array4 = [[1,2,3,4],
+ [5,6,7,8],
+ [9,10,11,12],
+ [13,14,15,16]];
+
+// Should print something like this 
+
+ [1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]
+
+
+ function run(input, result) {
+    if (input.length == 0) {
+        return result;
+    }
+
+    // add the first row to result
+    result = result.concat(input.shift());
+
+    // add the last element of each remaining row
+    input.forEach(function(rightEnd) {
+        result.push(rightEnd.pop());
+    });
+
+    // add the last row in reverse order
+    result = result.concat(input.pop().reverse());
+
+    // add the first element in each remaining row (going upwards)
+    var tmp = [];
+    input.forEach(function(leftEnd) {    
+        tmp.push(leftEnd.shift());
+    });
+    result = result.concat(tmp.reverse());
+
+    return run(input, result);
+}
+
+
+var result = run(array4, []);
+
+console.log('result', result);
