@@ -129,3 +129,13 @@ const array4 = [[1,2,3,4],
 var result = run(array4, []);
 
 console.log('result', result);
+
+
+/////////////////////////////////////////////////////
+// JAVASCRIPT SUB ARRAY SORT 
+/////////////////////////////////////////////////////
+let array = [[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39],[1000, 1001, 857, 1]];
+for(let sub of array) {
+  sub.sort((a, b) => a - b);
+}
+console.log(array)

@@ -1,3 +1,23 @@
+//Replace multiple strings with multiple other strings
+var str = "I have a cat, a dog, and a goat.";
+var mapObj = {
+   cat:"dog",
+   dog:"goat",
+   goat:"cat"
+};
+str = str.replace(/cat|dog|goat/gi, function(matched){
+  return mapObj[matched];
+});
+
+
+
+// Sort the number 
+const a = [10, -1, 2, 5, 0, 6, 4, -5];
+
+const b = a.sort(function(a, b){
+    return a - b;
+});
+
 
 const str = {"AUM":3597,"investment_amount":143,"symbols":{"BIV":{"allocation":24,"qty":0,"marketValue":34},"BSV":{"allocation":26,"qty":0,"marketValue":37},"GLD":{"allocation":9,"qty":0,"marketValue":13},"VDE":{"allocation":2,"qty":0,"marketValue":2},"VOX":{"allocation":19,"qty":0,"marketValue":28},"VPL":{"allocation":6,"qty":0,"marketValue":9},"VWO":{"allocation":14,"qty":0,"marketValue":20}}};
 
