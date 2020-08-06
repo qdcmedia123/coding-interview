@@ -1,41 +1,65 @@
+// Creating number of start that is selected
+const starts = new Array(100).fill(false);
+const point = 30;
+let getPoints = [];
+
+if (starts.length === 0) return starts;
+
+for (var j = 1; j <= starts.length; j++) {
+  if (point === j) {
+    for (var i = 0; i < point; ++i) {
+      starts[i] = true;
+    }
+    break;
+  }
+}
+
+console.log(starts);
+
 //Replace multiple strings with multiple other strings
 var str = "I have a cat, a dog, and a goat.";
 var mapObj = {
-   cat:"dog",
-   dog:"goat",
-   goat:"cat"
+  cat: "dog",
+  dog: "goat",
+  goat: "cat",
 };
-str = str.replace(/cat|dog|goat/gi, function(matched){
+str = str.replace(/cat|dog|goat/gi, function (matched) {
   return mapObj[matched];
 });
 
-
-
-// Sort the number 
+// Sort the number
 const a = [10, -1, 2, 5, 0, 6, 4, -5];
 
-const b = a.sort(function(a, b){
-    return a - b;
+const b = a.sort(function (a, b) {
+  return a - b;
 });
 
+const str = {
+  AUM: 3597,
+  investment_amount: 143,
+  symbols: {
+    BIV: { allocation: 24, qty: 0, marketValue: 34 },
+    BSV: { allocation: 26, qty: 0, marketValue: 37 },
+    GLD: { allocation: 9, qty: 0, marketValue: 13 },
+    VDE: { allocation: 2, qty: 0, marketValue: 2 },
+    VOX: { allocation: 19, qty: 0, marketValue: 28 },
+    VPL: { allocation: 6, qty: 0, marketValue: 9 },
+    VWO: { allocation: 14, qty: 0, marketValue: 20 },
+  },
+};
 
-const str = {"AUM":3597,"investment_amount":143,"symbols":{"BIV":{"allocation":24,"qty":0,"marketValue":34},"BSV":{"allocation":26,"qty":0,"marketValue":37},"GLD":{"allocation":9,"qty":0,"marketValue":13},"VDE":{"allocation":2,"qty":0,"marketValue":2},"VOX":{"allocation":19,"qty":0,"marketValue":28},"VPL":{"allocation":6,"qty":0,"marketValue":9},"VWO":{"allocation":14,"qty":0,"marketValue":20}}};
-
-const {symbols} = str;
-
+const { symbols } = str;
 
 /*const mp = symbols.map(function(item) {
  return item;
 })*/
 
-Object.entries(symbols).forEach(entry => {
+Object.entries(symbols).forEach((entry) => {
   let key = entry[0];
   let value = entry[1];
   //use key and value here
-  console.log(key)
+  console.log(key);
 });
-
-
 
 //Iterating over async iterables
 
@@ -49,17 +73,16 @@ const asyncIterable = {
         }
 
         return Promise.resolve({ done: true });
-      }
+      },
     };
-  }
+  },
 };
 
-(async function() {
-   for await (let num of asyncIterable) {
-     console.log(num);
-   }
+(async function () {
+  for await (let num of asyncIterable) {
+    console.log(num);
+  }
 })();
-
 
 const array1 = [5, 12, 8, 130, 44];
 
@@ -70,16 +93,14 @@ console.log(array1.findIndex(isLargeNumber));
 
 // How do you make first letter of the string in an uppercase?
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //How do you test for an empty object?
-Object.entries(obj).length === 0 && obj.constructor === Object 
+Object.entries(obj).length === 0 && obj.constructor === Object;
 
 //
-function AUMGrqphData (data, userSelectedPastMonth = 12){
- 
-  
+function AUMGrqphData(data, userSelectedPastMonth = 12) {
   const end = Moment(new Date())
     .subtract(userSelectedPastMonth, "months")
     .format("YYYY-MM-DD");
@@ -92,7 +113,6 @@ function AUMGrqphData (data, userSelectedPastMonth = 12){
   });
 
   let sumingOpp = [];
- 
 
   for (let i = 0; i < dateRange.length - 1; i++) {
     let sumOpp = data.filter(function (item) {
@@ -150,7 +170,7 @@ function AUMGrqphData (data, userSelectedPastMonth = 12){
   totalCashValue = Math.round(totalCashValue);
 
   let AUM = totalEquity + totalCashValue;
-  AUM = Math.round(AUM );
+  AUM = Math.round(AUM);
 
   const result = {
     data: getAllMonthsSummed,
@@ -161,7 +181,6 @@ function AUMGrqphData (data, userSelectedPastMonth = 12){
 
   return result;
 }
-
 
 const data = [
   { description: "Senior", Amount: 50, Sum: 50 },
@@ -992,53 +1011,51 @@ var myArray = ["a", 1, "a", 2, "1"];
 
 let unique = [...new Set(myArray)];
 
-
-
 ////////////////////////////////////////////////////////////////////
-// MIS QUESTION IS HERE 
+// MIS QUESTION IS HERE
 ///////////////////////////////////////////////////////////////////
 
 /*
  * 1
- * 
+ *
  * */
 // What will oupt this code
 const arr = [10, 12, 15, 21];
 for (var i = 0; i < arr.length; i++) {
-  setTimeout(function() {
-    console.log('Index: ' + i + ', element: ' + arr[i]);
+  setTimeout(function () {
+    console.log("Index: " + i + ", element: " + arr[i]);
   }, 3000);
 }
-
-
 
 // To bring expected ouput following need to be used
 
 const arr = [10, 12, 15, 21];
 for (var i = 0; i < arr.length; i++) {
-  // pass in the variable i so that each function 
+  // pass in the variable i so that each function
   // has access to the correct index
   var g = arr[i];
-  
-  setTimeout(function(i, g) {
-    return function() {
-      console.log('The index '+ i +'of this number is: ' + g);
-    }
-  }(i, arr[i]), 3000);
+
+  setTimeout(
+    (function (i, g) {
+      return function () {
+        console.log("The index " + i + "of this number is: " + g);
+      };
+    })(i, arr[i]),
+    3000
+  );
 }
 
-
 /*
- * 2 Understand bind 
- * 
+ * 2 Understand bind
+ *
  * */
 
 var module = {
   x: 42,
-  getX: function() {
+  getX: function () {
     return this.x;
-  }
-}
+  },
+};
 
 var unboundGetX = module.getX;
 console.log(unboundGetX()); // The function gets invoked at the global scope
@@ -1048,81 +1065,71 @@ var boundGetX = unboundGetX.bind(module);
 console.log(boundGetX());
 // expected output: 42
 
-
 // Apply
 
 function personContainer() {
-  var person = {  
-     name: "James Smith",
-     hello: function() {
-       console.log(this.name + " says hello " + arguments[1]);
-     }
-  }
+  var person = {
+    name: "James Smith",
+    hello: function () {
+      console.log(this.name + " says hello " + arguments[1]);
+    },
+  };
   person.hello.apply(person, arguments);
 }
 
+personContainer("world", "mars"); // output: "James Smith says hello mars", note: arguments[0] = "world" , arguments[1] = "mars"
 
-personContainer("world", "mars"); // output: "James Smith says hello mars", note: arguments[0] = "world" , arguments[1] = "mars"         
+// Calling function
 
-
-// Calling function 
-
-var person = {  
+var person = {
   name: "James Smith",
-  hello: function(thing) {
+  hello: function (thing) {
     console.log(this.name + " says hello " + thing);
-  }
-}
+  },
+};
 
-person.hello("world");  // output: "James Smith says hello world"
+person.hello("world"); // output: "James Smith says hello world"
 person.hello.call({ name: "Jim Smith" }, "world"); // output: "Jim Smith says hello world"
 
-         
 /*
  * Scope s
- * */                   
+ * */
 
 var a = 10;
 
 function Foo() {
-
   if (true) {
-      let a = 4;
+    let a = 4;
   }
 
   alert(a); // alerts '10' because the 'let' keyword
 }
 Foo();
 
-
-function Foo(){
+function Foo() {
   console.log(this.a);
 }
-var food = {a: "Magical this"};
+var food = { a: "Magical this" };
 
 Foo.call(food); // food is this
 
-
 ////////////////////////////////////////////////////////////////////
-// MIS ENS QUESTION ENDS HERE 
+// MIS ENS QUESTION ENDS HERE
 ///////////////////////////////////////////////////////////////////
 
 /*
- *  Instance of 
+ *  Instance of
  * */
- 
- function Car(make, model, year) {
+
+function Car(make, model, year) {
   this.make = make;
   this.model = model;
   this.year = year;
 }
-var newCar = new Car('Honda', 'City', 2007);
+var newCar = new Car("Honda", "City", 2007);
 console.log(newCar instanceof Car); // returns true
 
-
-
-
-var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 var howmany = 3;
 
@@ -1130,18 +1137,15 @@ var elements = array.length / 3;
 
 // var item = items[Math.floor(Math.random()*items.length)];
 
-// Broked 
+// Broked
 var borked = [];
 
-
-for( var i = 0; i < howmany; i++) {
-
+for (var i = 0; i < howmany; i++) {
   borked.push(array.splice(0, elements));
 }
 
 console.log(borked);
 
-
-var array3 = array1.filter(function(obj) { return array2.indexOf(obj) == -1; });
-
-
+var array3 = array1.filter(function (obj) {
+  return array2.indexOf(obj) == -1;
+});

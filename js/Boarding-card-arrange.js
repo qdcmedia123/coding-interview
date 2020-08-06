@@ -24,53 +24,7 @@ class GetHTMLTemplate extends GetBoardingList {
   }
 }
 
-var boarding = [
-  {
-    'from': 'Barcelona',
-    'to': 'New York',
-    'instruction': '',
-    'time': '2018-02-02 20:05',
-    'transport': 'Flight',
-    'transportno': 'B33',
-    'seatno': 'Y15'
-  },
-  {
-    'from': 'Barcelona',
-    'to': 'Gerona',
-    'instruction': '',
-    'time': '2018-02-02 20:05',
-    'transport': 'Bus',
-    'transportno': 'M31, M32, M33',
-    'seatno': 'Any'
-  },
-  {
-    'from': 'Madrid',
-    'to': 'Barcelona',
-    'instruction': '',
-    'time': '2018-02-02 20:05',
-    'transport': 'Bus',
-    'transportno': 'M31, M32, M33',
-    'seatno': 'Any'
-  },
-  {
-    'from': 'New York',
-    'to': 'Stockholm',
-    'instruction': '',
-    'time': '2018-02-02 20:05',
-    'transport': 'Flight',
-    'transportno': 'M31, M32, M33',
-    'seatno': 'Any'
-  },
-  {
-    'from': 'Gerona',
-    'to': 'Barcelona',
-    'instruction': '',
-    'time': '2018-02-02 20:05',
-    'transport': 'Bus',
-    'transportno': 'M31, M32, M33',
-    'seatno': 'Any'
-  }
-]
+
 
 GetBoardingList.prototype.propComparator =  function (prop, prop1) {
     
@@ -92,12 +46,8 @@ GetBoardingList.prototype.ArrayCards = function () {
 
   // Check if data is type of array
   
-   
-	
-	
-	
-	
    var SortedBoarding =  boradingList.sort(this.propComparator('to', 'from'));
+   console.log(SortedBoarding)
 
    this.ArrayCards = SortedBoarding;
    
@@ -163,9 +113,64 @@ GetBoardingList.prototype.GetTemplate = function () {
 	
 }
 
+ function propComparator(prop, prop1) {
+    
+    return function(a, b) {
+    
+        return a[prop] == b[prop1] ? 1 : -1;
+    }
+}
+var boarding = [
+  {
+    'from': 'Barcelona',
+    'to': 'New York',
+    'instruction': '',
+    'time': '2018-02-02 20:05',
+    'transport': 'Flight',
+    'transportno': 'B33',
+    'seatno': 'Y15'
+  },
+  {
+    'from': 'Barcelona',
+    'to': 'Gerona',
+    'instruction': '',
+    'time': '2018-02-02 20:05',
+    'transport': 'Bus',
+    'transportno': 'M31, M32, M33',
+    'seatno': 'Any'
+  },
+  {
+    'from': 'Madrid',
+    'to': 'Barcelona',
+    'instruction': '',
+    'time': '2018-02-02 20:05',
+    'transport': 'Bus',
+    'transportno': 'M31, M32, M33',
+    'seatno': 'Any'
+  },
+  {
+    'from': 'New York',
+    'to': 'Stockholm',
+    'instruction': '',
+    'time': '2018-02-02 20:05',
+    'transport': 'Flight',
+    'transportno': 'M31, M32, M33',
+    'seatno': 'Any'
+  },
+  {
+    'from': 'Gerona',
+    'to': 'Barcelona',
+    'instruction': '',
+    'time': '2018-02-02 20:05',
+    'transport': 'Bus',
+    'transportno': 'M31, M32, M33',
+    'seatno': 'Any'
+  }
+]
 
-
-GetBoardingList.prototype.prop = 'to';
+boarding.sort(propComparator('to', 'from'))
+console.log(boarding)
+/*GetBoardingList.prototype.prop = 'to';
 
 GetBoardingList.prototype.template = '<li>Get {{&transport}} from {{&from}} To {{&to}}</li>';
 
@@ -178,9 +183,9 @@ var obj = new GetBoardingList(boarding, 'to')
 
 var data = obj.ArrayCards();
 
-//console.log(obj.GetTemplate());
+console.log(data);
 
-console.log(obj.ArrayCards)
-
+//console.log(obj)
+*/
 
 
