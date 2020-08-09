@@ -61,3 +61,79 @@ const array1 = [1, 30, 39, 29, 10, 13];
 console.log(array1.every(isBelowThreshold));
 // expected output: true
 
+//Array.prototype.fill()
+// The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index (default array.length). It returns the modified array.
+const array1 = [1, 2, 3, 4];
+
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+
+
+// Array.prototype.filter()
+// The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+
+//Array.prototype.find()
+// The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element => element > 10);
+
+console.log(found);
+// expected output: 12
+
+
+//Array.prototype.findIndex()
+// The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
+
+
+// Array.prototype.flat()
+//The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+const arr1 = [1, 2, [3, 4]];
+arr1.flat(); 
+// [1, 2, 3, 4]
+
+const arr2 = [1, 2, [3, 4, [5, 6]]];
+arr2.flat();
+// [1, 2, 3, 4, [5, 6]]
+
+const arr3 = [1, 2, [3, 4, [5, 6]]];
+arr3.flat(2);
+// [1, 2, 3, 4, 5, 6]
+
+const arr4 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+arr4.flat(Infinity);
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+//Array.prototype.flatMap()
+//The flatMap() method first maps each element using a mapping function, then flattens the result into a new array. It is identical to a map() followed by a flat() of depth 1, but flatMap() is often quite useful, as merging both into one method is slightly more efficient.
+var arr = [1, 2, 3, 4];
+
+arr.flatMap(x => [x, x * 2]);
+// is equivalent to
+arr.reduce((acc, x) => acc.concat([x, x * 2]), []);
+// [1, 2, 2, 4, 3, 6, 4, 8]
+
+
+
+

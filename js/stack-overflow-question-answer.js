@@ -308,24 +308,6 @@ function arr_diff(a1, a2) {
   return diff;
 }
 
-/*
- * NodeJS - Subtract array from array, not removing all duplicates [duplicate]
- * */
-Array.prototype.subtract = function (array) {
-  array = array.slice();
-  return this.filter(function (a) {
-    var p = array.indexOf(a);
-    if (p === -1) {
-      return true;
-    }
-    array.splice(p, 1);
-  });
-};
-
-var a = [1, 2, 2, 3, 3, 3],
-  b = [1, 2, 3];
-
-console.log(a.subtract(b));
 
 /*
  * Create ArrayList from array
