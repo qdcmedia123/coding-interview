@@ -105,11 +105,17 @@ const array4 = [[1,2,3,4],
     }
 
     // add the first row to result
-    result = result.concat(input.shift());
+    result = result.concat(input.shift()); // [ 1, 2, 3, 4 ]
 
     // add the last element of each remaining row
+    /*
+      result [
+        1,  2,  3, 4,
+        8, 12, 16
+      ]
+    */
     input.forEach(function(rightEnd) {
-        result.push(rightEnd.pop());
+        result.push(rightEnd.pop()); // get the last element from each array
     });
 
     // add the last row in reverse order
