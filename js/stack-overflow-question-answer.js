@@ -1,3 +1,41 @@
+//The Intl.RelativeTimeFormat object enables language-sensitive relative time formatting.
+
+const rtf1 = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
+
+console.log(rtf1.format(3, 'quarter'));
+//expected output: "in 3 qtrs."
+
+console.log(rtf1.format(-1, 'day'));
+//expected output: "1 day ago"
+
+const rtf2 = new Intl.RelativeTimeFormat('es', { numeric: 'auto' });
+
+console.log(rtf2.format(2, 'day'));
+//expected output: "pasado mañana"
+
+
+////////////////////////////////////////////////
+
+
+let sum = a => b => b ? sum(a + b) : a;
+
+console.log(sum(10)(20)(3)(4)());
+
+// Check nested object is set 
+
+function checkNested(obj, level,  ...rest) {
+  if (obj === undefined) return false
+  if (rest.length == 0 && obj.hasOwnProperty(level)) return true
+  return checkNested(obj[level], ...rest)
+}
+
+
+const test = { level1:{ level2:{ level3:'level3'} } };
+checkNested(test, 'level1', 'level2', 'level3'); // true
+checkNested(test, 'level1', 'level2', 'foo'); // fals
+
+
+
 // Creating number of start that is selected
 const starts = new Array(100).fill(false);
 const point = 30;
@@ -13,6 +51,27 @@ for (var j = 1; j <= starts.length; j++) {
     break;
   }
 }
+
+/*
+//
+const numbers = new Array(100).fill(false);
+const points = 5;
+const starts = numbers.fill(true, 0, points + 1);
+console.log(starts)
+*/
+
+/*
+// Another way 
+const stars  = new Array(100).fill(false);
+const points = 5;
+let getPoints = [];
+
+for(var i = 0; i < stars.length; i++) {
+  if(points > i) {
+    stars[i] = true;
+  }
+}
+*/
 
 console.log(starts);
 
