@@ -1,3 +1,19 @@
+//JavaScript equivalent of Python's format() function?
+
+String.prototype.format = function () {
+  var i = 0, args = arguments;
+  return this.replace(/{}/g, function () {
+    return typeof args[i] != 'undefined' ? args[i++] : '';
+  });
+};
+
+var bar1 = 'foobar',
+    bar2 = 'jumped',
+    bar3 = 'dog';
+
+'The lazy {} {} over the {}'.format(bar3, bar2, bar1);
+
+
 //The Intl.RelativeTimeFormat object enables language-sensitive relative time formatting.
 
 const rtf1 = new Intl.RelativeTimeFormat('en', { style: 'narrow' });

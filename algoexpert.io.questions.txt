@@ -6,11 +6,13 @@ Nth Fibonacci
 Two Number Sum
 Validate Subsequence
 Find Closest Value In BST
-Branch SumsNode Depths
+Branch Sums
+Node Depths
 Depth-first Search
 Product Sum
 Binary Search
 Find Three Largest Numbers
+// found above 
 Bubble Sort
 Insertion SortSelection Sort
 Palindrome Check
@@ -30,6 +32,7 @@ Validate BST
 BST Traversal
 Min Height BST
 Invert Binary Tree
+// Added til here 
 Max Subset Sum No Adjacent
 Number Of Ways To Make Change
 Min Number Of Coins For Change
@@ -63,6 +66,7 @@ Max Path Sum In Binary Tree
 Max Sum Increasing Subsequence
 Longest Common Subsequence
 Min Number Of Jumps
+// Till here I have copied 
 Water Area
 Knapsack Problem
 Disk Stacking
@@ -92,7 +96,8 @@ Very Hard – 0/17
 ###############################################
 Max Profit With K Transactions
 Apartment Hunting
-Calendar MatchingIterative In-order Traversal
+Calendar Matching
+Iterative In-order Traversal
 Flatten Binary Tree
 Right Sibling Tree
 All Kinds Of Node Depths
@@ -105,7 +110,7 @@ LRU Cache
 Rearrange Linked List
 Number Of Binary Tree Topologies
 Merge Sort
-Smallest Substring Containing
+Smallest Substring Containing (Done)
 
 
 #########################################
