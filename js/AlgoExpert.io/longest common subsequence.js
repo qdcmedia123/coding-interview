@@ -34,7 +34,7 @@ console.log("Longest Comment Subsequence is: ", lcs);
 *   USING DYNAMIC PROGRAMMING:
 */
 
-//Initial 2D dynamic array to a size of the small string
+/*//Initial 2D dynamic array to a size of the small string
 var dpArr = [];
 var size;
 string_one_length <= string_two_length ? size = string_one_length : size = string_two_length ;
@@ -66,4 +66,4 @@ function LCS_DP(S1, m, S2, n) {
     return finalResult;
 }
 
-console.log("LCS Dynamic Programming is: ", lcs);
+console.log("LCS Dynamic Programming is: ", lcs);*/

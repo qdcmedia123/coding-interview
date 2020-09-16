@@ -28,6 +28,6 @@ def lcs(X , Y):
 # Driver program to test the above function 
 X = "AGGTAB"
 Y = "GXTXAYB"
-print "Length of LCS is ", lcs(X, Y) 
+print(lcs(X, Y))
 
 # This code is contributed by Nikhil Kumar Singh(nickzuck_007) 

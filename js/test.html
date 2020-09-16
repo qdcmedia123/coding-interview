@@ -1,0 +1,288 @@
+  <div className="col-sm-2 ">
+                                <div
+                                  className="card "
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf("low_risk") !== -1
+                                        ? "card-body selected c_low_risk"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("low_risk")
+                                    }
+                                  >
+                                    <div className="dot c_low_risk"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Low Risk
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0].low_risk
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="col-sm-2">
+                                <div
+                                  className="card"
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf(
+                                        "very_conservative"
+                                      ) !== -1
+                                        ? "card-body selected c_very_conservative"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("very_conservative")
+                                    }
+                                  >
+                                    <div className="dot c_very_conservative"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Very Conservative{" "}
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0]
+                                                .very_conservative
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="col-sm-2">
+                                <div
+                                  className="card"
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf("conservative") !==
+                                      -1
+                                        ? "card-body selected c_conservative"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("conservative")
+                                    }
+                                  >
+                                    <div className="dot c_conservative"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Conservative
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0].conservative
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="col-sm-2">
+                                <div
+                                  className="card"
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf("balanced") !== -1
+                                        ? "card-body selected c_balanced"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("balanced")
+                                    }
+                                  >
+                                    <div className="dot c_balanced"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Balanced
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0].balanced
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="col-sm-2">
+                                <div
+                                  className="card"
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf(
+                                        "semi_aggressive"
+                                      ) !== -1
+                                        ? "card-body selected c_semi_aggressive"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("semi_aggressive")
+                                    }
+                                  >
+                                    <div className="dot c_semi_aggressive"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Semi Aggressive
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0].semi_aggressive
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="col-sm-2">
+                                <div
+                                  className="card"
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf("aggressive") !== -1
+                                        ? "card-body selected c_aggressive"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("aggressive")
+                                    }
+                                  >
+                                    <div className="dot c_aggressive"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Aggressive
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0].aggressive
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                           
+                              <div className="col-sm-2">
+                                <div
+                                  className="card"
+                                  tabIndex="0"
+                                  data-toggle="tooltip"
+                                  title={`Sum of last ${
+                                    priceEvolutionMonths === null
+                                      ? 12
+                                      : priceEvolutionMonths
+                                  } months.`}
+                                >
+                                  <div
+                                    className={
+                                      riskLevelCard.indexOf(
+                                        "very_aggressive"
+                                      ) !== -1
+                                        ? "card-body selected c_very_aggressive"
+                                        : "card-body"
+                                    }
+                                    onClick={() =>
+                                      riskLevelCardAction("very_aggressive")
+                                    }
+                                  >
+                                    <div className="dot c_very_aggressive"></div>
+
+                                    <div className="d-inline risk__and__price">
+                                      <div className="risk__text">
+                                        {" "}
+                                        Very Aggressive
+                                      </div>
+                                      <div className="risk__amount">
+                                        {getPortfolio() !== null
+                                          ? formatter.format(
+                                              getPortfolio()[0].very_aggressive
+                                            )
+                                          : 0.0}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            

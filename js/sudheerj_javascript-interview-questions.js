@@ -118,3 +118,12 @@ console.log(myGenObj.next());
 A return statement in a generator function will make the generator finish. If a value is returned, it will be set as the value property of the object and done property to true. When a generator is finished, subsequent next() calls return an object of this 
 form: {value: undefined, done: true}.
 */
+
+const {a: x = 10, b: y = 20} = {a: 30};
+console.log(x);
+console.log(y);
+
+
+
+const [x, ...y,] = [1, 2, 3, 4];
+console.log(x, y);

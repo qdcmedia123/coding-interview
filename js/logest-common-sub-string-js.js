@@ -1,4 +1,4 @@
-function lcs(a, b) {
+/*function lcs(a, b) {
   var aSub = a.substr(0, a.length - 1);
   var bSub = b.substr(0, b.length - 1);
  
@@ -12,19 +12,16 @@ function lcs(a, b) {
     return (x.length > y.length) ? x : y;
   }
 }
+*/
 
-var a = 'AGGTAB';
-var b = 'GXTXAYB';
-
-console.log(lcs(a,b))
 
 
 /* updated */
 
-function lcs1(a, b) {
+function lcs(a, b) {
   var aSub = a.substr(0, a.length - 1);
   var bSub = b.substr(0, b.length - 1);
- 
+ return aSub;
   if (a.length === 0 || b.length === 0) {
     return '';
   } else if (a[a.length - 1] === b[b.length - 1]) {

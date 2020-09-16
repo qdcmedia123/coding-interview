@@ -144,4 +144,21 @@ let array = [[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39],[1000, 1001, 857, 
 for(let sub of array) {
   sub.sort((a, b) => a - b);
 }
+
 console.log(array)
+
+
+// Object entries 
+const obj = {};
+
+// Key and value iteration
+for(const [key, value] of Object.entries(obj)) {
+  
+}
+
+// Entries 
+Object.entries(obj).forEach(entry => {
+ // entrie[0] is key 
+ // entries[1] is value 
+})
+
