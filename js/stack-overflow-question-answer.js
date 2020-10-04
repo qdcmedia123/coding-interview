@@ -292,10 +292,9 @@ const modidy = data.map(function (content, index, array) {
     keys.forEach(function (item) {
       content[item] = array[index][item] + array[index - 1][item];
     });
-    return content;
-  } else {
-    return content;
-  }
+    
+  } 
+  return content;
 });
 console.log(modidy);
 

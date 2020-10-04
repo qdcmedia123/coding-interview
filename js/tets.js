@@ -1,37 +1,26 @@
-const array4 = [[1,2,3,4],
- [5,6,7,8],
- [9,10,11,12],
- [13,14,15,16]];
-
-function run(input, result) { 
-	// Check the length of input 
-	if(input.length === 0) return result;
-
-	// Add the first two rows to the result 
-	result = result.concat(input.shift()); // [first index]
-
-	// Add the last element for each remaining rows 
-	input.forEach(function(rightEnd) {
-		result.push(rightEnd.pop());
-	});
-
-	// add the last two rows in reverse order 
-	result = result.concat(input.pop().reverse());
-
-	// Add the first element in each remaining rows 
-	
-
-	var tmp = [];
-	input.forEach(function(leftEnd) {
-		tmp.push(leftEnd.shift());
+function computeJoinPoint(x, y) {
+	const s1Array = x.toString().split("").map(function(t) {
+		return parseInt(t);
 	})
 
-	result = result.concat(tmp.reverse());
+	const s2Array = y.toString().split("").map(function(t) {
+		return parseInt(t);
+	})
 
-	return run(input, result);
-	
+	// Reduce and add each of the 
+	const s1sum = s1Array.reduce((a,b) => {
+		return a + b
+	}) + x;
+
+	const s2Sum = s2Array.reduce((a,b) => {
+		return a + b;
+	}) + y;
+
+	if(s1sum !== s2Sum) {
+		return computeJoinPoint(s1sum, s2Sum);
+	}
+
+	return s1sum;
 }
 
- var result = run(array4, []);
-
-console.log('result', result);
+console.log(computeJoinPoint(471, 480));

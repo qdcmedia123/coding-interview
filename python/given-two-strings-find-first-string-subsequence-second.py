@@ -3,9 +3,8 @@
 # of another string 
   
 # Returns true if str1[] is a subsequence of str2[]. 
-def isSubSequence(string1, string2): 
-    m = len(string1) 
-    n = len(string2) 
+def isSubSequence(string1, string2, m, n): 
+     
     # Base Cases 
     if m == 0:    return True
     if n == 0:    return False
@@ -20,10 +19,7 @@ def isSubSequence(string1, string2):
 # Driver program to test the above function 
 string1 = "gksrek"
 string2 = "geeksforgeeks"
+m = len(string1) 
+n = len(string2)
   
-if isSubSequence(string1, string2): 
-    print "Yes"
-else: 
-    print "No"
-  
-# This code is contributed by BHAVYA JAIN 
+print(isSubSequence(string1, string2, m, n))

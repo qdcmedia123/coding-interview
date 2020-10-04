@@ -112,3 +112,26 @@ function calculateManyRiskFactor(...arg) {
 
 
 console.log(calculateManyRiskFactor('medium', 'low', 'medium', 'medium', 'medium'))
+
+// Updated risk calculation recursive function 
+function calculateRiskFactor(...args) {
+  var risk_factor;
+
+  if(Object.values(args).length < 1) return false;
+
+  // get the args value
+  const argsValues = Object.values(args);
+
+  let lastone = argsValues;
+ 
+ // Let first compute 
+ if(args.length === 2) {
+  return totalRisk(...argsValues.slice());
+ } else {
+  // You will run the recursive function
+  return calculateRiskFactor(totalRisk(...argsValues.splice(0,2)), ...argsValues)
+ }
+  
+  
+  
+}
