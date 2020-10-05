@@ -24,6 +24,8 @@ function rotate(matrix) {
         matrix[j][y - i] = k
      }
   }
+
+  return matrix;
 }
-rotate(A);
-console.log(A);
+console.log(rotate(A));
+
