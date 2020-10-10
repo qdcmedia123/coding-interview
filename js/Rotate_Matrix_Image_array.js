@@ -28,4 +28,12 @@ function rotate(matrix) {
   return matrix;
 }
 console.log(rotate(A));
+/*
+[
+  [ 13, 9, 5, 1 ],
+  [ 14, 10, 6, 2 ],
+  [ 15, 11, 7, 3 ],
+  [ 16, 12, 8, 4 ]
+]
+*/
 

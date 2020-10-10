@@ -1,39 +1,56 @@
-function rotate(matrix) {
-	const n = matrix.length;
-	const x = Math.floor(n/2);
-	const y = n - 1;
-	for(let i = 0; i < x; i++) {
-		for(let j = i; j < y; j++) {
-			
-			k = matrix[i][j];
-			matrix[i][j] = matrix[y -j][i]
-			matrix[y-j][i]= matrix[y-i][y-j];
-			matrix[y-i][y-j] = matrix[j][y-i]
-			matrix[j][y-i] = k
-		}
+let nums = [2, 7, 10, 1, 11, 15, 9]
+let target = 12
+let numMaps = new Map();
+
+let paris = nums.reduce((acc, num) => {
+	let numToFind = target - num;
+	if(numMaps.get(numToFind)) {
+		return [...acc, [num, numToFind]]
+	} else {
+		numMaps.set(num, true);
+		return [...acc]
+	}
+}, [])
+
+// Another way but only 
+
+function totalRisk(r1, r2) {
+	const validateRiskFactor = ['low', 'medium', 'high'];
+
+	// Check both risk factor 
+	if(validateRiskFactor.indexOf(r1) === -1 || validateRiskFactor.indexOf(r2) === -1) {
+		return false;
 	}
 
-	return matrix;
-	
+	var ret = null;
+
+ 	switch(r1) {
+ 		case 'low':
+ 			ret = (r2 ==='high') ? 'medium' : 'low';
+ 			break;
+ 		case 'medium':
+ 			ret = r2;
+ 			break;
+ 		case 'high':
+ 			ret = (r2 === 'low') ? 'medium' : 'high';
+ 			break;
+ 	}
+
+ 	return ret;
+
 }
 
+// Let recursively calculate the value 
+function calculateRiskFactor (...args) {
+	var risk_factor;
+	if(Object.values(args).length < 1) return false;
 
+	const argsValues = Object.values(args);
+	if(args.length === 2) {
+		return totalRisk(...argsValues.slice());
+	} else {
+		return calculateRiskFactor(totalRisk(...argsValues.splice(0,2)), ...argsValues)
+	}
+}
 
-const A = [
-  [1, 2, 3, 4],
-  [5, 6, 7, 8],
-  [9, 10, 11, 12],
-  [13, 14, 15, 16],
-
-]
-
-console.log(rotate(A));
-
-/*
-[
-  [ 13, 9, 5, 1 ],
-  [ 14, 10, 6, 2 ],
-  [ 15, 11, 7, 3 ],
-  [ 16, 12, 8, 4 ]
-]
-*/
+console.log(calculateRiskFactor('medium', 'low', 'medium', 'low', 'high'))

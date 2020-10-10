@@ -115,7 +115,6 @@ console.log(calculateManyRiskFactor('medium', 'low', 'medium', 'medium', 'medium
 
 // Updated risk calculation recursive function 
 function calculateRiskFactor(...args) {
-  var risk_factor;
 
   if(Object.values(args).length < 1) return false;
 
