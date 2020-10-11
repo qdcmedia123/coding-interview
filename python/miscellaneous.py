@@ -160,3 +160,31 @@ dictf = reduce(lambda x, y: dict((k, v + y[k]) for k, v in x.iteritems()), dict1
 #How to sum all the values in a dictionary?
 d = {'key1': 1,'key2': 14,'key3': 47}
 sum(d.values())
+
+#Iterating over dictionaries using for loops 
+d = {'x': 1, 'y': 2, 'z': 3} 
+
+for key,value in d.items():
+    print(value)
+
+# Converting integer into array 
+[int(i) for i in str(12345)]
+
+#How to split string without spaces into list of integers in Python? [duplicate]
+
+a = "12345"    
+map(int, a)
+#[1, 2, 3, 4, 5]
+
+#How to get the current time in Python
+#import datetime
+datetime.datetime.now()
+datetime.datetime(2009, 1, 6, 15, 8, 24, 78915)
+
+# Another way 
+now = datetime.datetime.now()
+
+#Does Python have a string 'contains' substring method?
+if "blah" not in somestring: 
+    continue
+
