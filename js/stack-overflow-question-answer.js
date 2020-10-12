@@ -1,3 +1,18 @@
+//How can I remove a specific item from an array?
+
+const array = [2, 5, 9];
+
+console.log(array);
+
+const index = array.indexOf(5);
+if (index > -1) {
+  array.splice(index, 1);
+}
+
+// array = [2, 9]
+console.log(array); 
+
+
 // Given an array find a pair such that it sums to a given number
 let nums = [2, 7, 10, 1, 11, 15, 9]
 let target = 11

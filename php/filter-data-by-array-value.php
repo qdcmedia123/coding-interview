@@ -3140,3 +3140,8 @@ function filter_by_value ($array, $index, $value){
 $active = filter_by_value($data, 'status', 'Active');
 
 echo count($active);
+
+// Options Why you write too much code 
+$active = array_filter($data, function ($var) {
+    return ($var['status'] == 'Active');
+});

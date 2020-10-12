@@ -1,56 +1,62 @@
+// Given an array find a pair such that it sums to a given number
 let nums = [2, 7, 10, 1, 11, 15, 9]
-let target = 12
-let numMaps = new Map();
+let target = 11
+let numMap = new Map();
 
-let paris = nums.reduce((acc, num) => {
+let pairs = nums.reduce((acc, num) => {
 	let numToFind = target - num;
-	if(numMaps.get(numToFind)) {
-		return [...acc, [num, numToFind]]
+
+	if(numMap.get(numToFind)) {
+		return [...acc, [numToFind, num]]
 	} else {
-		numMaps.set(num, true);
-		return [...acc]
+		numMap.set(num, true)
+		return [...acc];
 	}
 }, [])
 
-// Another way but only 
 
-function totalRisk(r1, r2) {
-	const validateRiskFactor = ['low', 'medium', 'high'];
+String.prototype.format = function() {
+	var i = 0, args = arguments;
+	return this.replace(/{}/g, function() {
+		return typeof args[i] !== 'undefined' ? args[i++] : '' ;
+	})
+	
+}
+var bar1 = 'foobar',
+    bar2 = 'jumped',
+    bar3 = 'dog';
 
-	// Check both risk factor 
-	if(validateRiskFactor.indexOf(r1) === -1 || validateRiskFactor.indexOf(r2) === -1) {
-		return false;
+// Compute join pints between two number 
+
+function conputeJoinPoint(s1,s2) {
+	let s1Array = s1
+    .toString(10)
+    .split("")
+    .map(function (t) {
+      return parseInt(t);
+    });
+  let s2Array = s2
+    .toString(10)
+    .split("")
+    .map(function (t) {
+      return parseInt(t);
+    });
+
+	// Reduce both variable and add the number 
+	let s1Sum = s1Array.reduce(function(a,b) {
+		return a + b;
+	}) + s1;
+
+	let s2Sum = s1Array.reduce(function(a,b) {
+		return a + b;
+	}) + s2;
+
+	if(s1Sum !== s2Sum) {
+		return conputeJoinPoint(s1Sum, s2Sum);
 	}
 
-	var ret = null;
-
- 	switch(r1) {
- 		case 'low':
- 			ret = (r2 ==='high') ? 'medium' : 'low';
- 			break;
- 		case 'medium':
- 			ret = r2;
- 			break;
- 		case 'high':
- 			ret = (r2 === 'low') ? 'medium' : 'high';
- 			break;
- 	}
-
- 	return ret;
+	return s1Sum;
 
 }
 
-// Let recursively calculate the value 
-function calculateRiskFactor (...args) {
-	var risk_factor;
-	if(Object.values(args).length < 1) return false;
-
-	const argsValues = Object.values(args);
-	if(args.length === 2) {
-		return totalRisk(...argsValues.slice());
-	} else {
-		return calculateRiskFactor(totalRisk(...argsValues.splice(0,2)), ...argsValues)
-	}
-}
-
-console.log(calculateRiskFactor('medium', 'low', 'medium', 'low', 'high'))
+console.log(conputeJoinPoint(471, 480));
