@@ -1,18 +1,13 @@
-from functools import reduce
+# Initialising list of dictionary 
+ini_dict = [{'a':5, 'b':10, 'c':90}, 
+			{'a':45, 'b':78}, 
+			{'a':90, 'c':10}] 
 
-#Compute join point between two numbers 
-def computeJoinPoints(s1, s2):
-	s1Array = [int(i) for i in str(s1)]
-	s2Array = [int(i) for i in str(s2)]
+result = {}
 
-	#find the sum of num s1Array and s2Array 
-	s1Sum = reduce((lambda x, y: x+y), s1Array) + s1
-	s2Sum = reduce((lambda x, y: x+y), s2Array) + s2
+for d in ini_dict:
+	for i in d.keys():
+		print(result.get(i,0))
+		result[i] = result.get(i,0) + d[i]
 
-	#check if both number is equal 
-	if s1Sum != s2Sum:
-		return computeJoinPoints(s1Sum, s2Sum)
-
-	return s1Sum;
-
-print(computeJoinPoints(471, 480))
+#print(result)
