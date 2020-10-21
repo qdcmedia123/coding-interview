@@ -1,64 +1,45 @@
-// How can i remove specific items form the array 
-const arra = [1,2];
+// How the clouser work
+function foo() {
+	const secrate = Math.trunc(Math.random() * 100);
 
-const index = arra.indexOf(1);
-if(index > -1) {
-	arra.splice(index, 1);
-}
-
-
-let nums = [2, 7, 10, 1, 11, 15, 9]
-let target = 11
-let numsMap = new Map();
-let pairs = nums.reduce((acc, num)=> {
-	let numberToFind = target - num;
-	if(numsMap.get(numberToFind)) {
-		return [...acc, [numberToFind, num]]
-	} else {
-		numsMap.set(num, true);
-		return [...acc]
+	return function inner() {
+		console.log(`This is outer function variable ${secrate}`);
 	}
-}, [])
-
-console.log(pairs)
-
-// Breaking the array 
-var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,34,435];
-
-var howmany = 3;
-
-var elements = Math.ceil(array.length / howmany);
-var broked = [];
-
-for(var i = 0; i < howmany; i ++) {
-	broked.push(array.splice(0, elements))
 }
 
-console.log(broked)
+const f = foo();
+f();
 
-// How call, apply and bind works 
+// Speradeseet operator 
+let x = {a: 1, b: 2, c: 3, z:26};
 
-var employee1 = {firstName: 'John', lastName: 'Rodson'};
-var employee2 = {firstName: 'Jimmy', lastName: 'Baily'};
+// Remove z and tabke ab to another variable 
+let {z, ...abc} = x;
 
-function welcome(msg1, msg2) {
-	console.log(`${this.firstName}` + `${msg1 + msg2}`);
-}
+console.log(abc)
+console.log(z)
 
-// Call use the paramater with one by one 
-let sayHello = welcome.call(employee1,'How', 'are you')
+// Filter the below object with key 
 
-// Bind with the array 
-let sayHelloApply = welcome.apply(employee2, ['how', 'are you']);
+const obj = {1: {age: 10}, 2: {age: 20}};
+let key = 1;
+var filtered = Object.fromEntries(Object.entries(obj).filter(x => x[0] === key));
+console.log(filtered)
 
-// bind 
-let sayHelloBind = welcome.bind(employee2);
-let sayHelloNow = sayHelloBind('How', 'are you')
+const raw = {
+  item1: { key: 'sdfd', value:'sdfd' },
+  item2: { key: 'sdfd', value:'sdfd' },
+  item3: { key: 'sdfd', value:'sdfd' }
+};
 
+const allowed = ['item1', 'item3'];
 
+// Get the allowed keys in the object 
+ filtered = Object.keys(raw).filter(key => allowed.includes(key)).reduce((obj,key) => {
+	obj[key] = raw[key];;
+	return obj;
+}, {})
 
-// Apply max value 
-var num = [1,2];
-var mx = Math.max.apply(null, num);
-var min = Math.min.apply(null, num)
-console.log(mx)
+// console.log(filtered)
+const array = [1,2,3];
+array.indexOf(2);

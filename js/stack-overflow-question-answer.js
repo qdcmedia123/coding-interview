@@ -1,3 +1,50 @@
+//How do JavaScript closures work?
+function foo() {
+  const secret = Math.trunc(Math.random()*100)
+  return function inner() {
+    console.log(`The secret number is ${secret}.`)
+  }
+}
+const f = foo() // `secret` is not directly accessible from outside `foo`
+f() // The only way to retrieve `secret`, is to invoke `f`
+
+
+//How can I clone a JavaScript object except for one key?
+let x = {a: 1, b: 2, c: 3, z:26};
+let {b, ...y} = x;
+
+
+//How to print objects except one, without deleting anything (JavaScript)
+const obj = {1: {age: 10}, 2: {age: 20}};
+let key = 1
+console.log(Object.keys(obj).filter(x => x != key).reduce((ac,a) => ({...ac,[a]:obj[a]}),{}));
+
+///Using the new feature Object.fromEntries
+const obj = {1: {age: 10}, 2: {age: 20}};
+let key = 1
+let res = Object.fromEntries(Object.entries(obj).filter(x => x[0] != key));
+console.log(res);
+
+//Filter object properties by key in ES6
+const raw = {
+  item1: { key: 'sdfd', value:'sdfd' },
+  item2: { key: 'sdfd', value:'sdfd' },
+  item3: { key: 'sdfd', value:'sdfd' }
+};
+
+const allowed = ['item1', 'item3'];
+
+const filtered = Object.keys(raw)
+  .filter(key => allowed.includes(key))
+  .reduce((obj, key) => {
+    obj[key] = raw[key];
+    return obj;
+  }, {});
+
+console.log(filtered);
+
+
+
 //How can I remove a specific item from an array?
 
 const array = [2, 5, 9];
