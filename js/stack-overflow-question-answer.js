@@ -1,3 +1,27 @@
+const renameKeys = (keysMap, obj) =>
+  Object.keys(obj).reduce(
+    (acc, key) => ({
+      ...acc,
+      ...{ [keysMap[key] || key]: obj[key] }
+    }),
+    {}
+  );
+
+
+keysMap = {
+  name: 'firstName',
+  job: 'passion'
+};
+
+obj = {
+  name: 'Bobo',
+  job: 'Front-End Master'
+};
+
+
+console.log(renameKeys(keysMap, obj));
+// { firstName: 'Bobo', passion: 'Front-End Master' }
+
 //How do JavaScript closures work?
 function foo() {
   const secret = Math.trunc(Math.random()*100)

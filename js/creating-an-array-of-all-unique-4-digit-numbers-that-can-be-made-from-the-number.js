@@ -16,6 +16,7 @@ function arrayCreate(array, size) {
     return result;
 }
 
-console.log(arrayCreate([1, 2, 3, 4], 4).map(a => a.join('')));
+console.log(console.log(arrayCreate([5, 7, 8, 10], 4)));
+//console.log(arrayCreate([5, 7, 8, 10], 4).map(a => a.join('-')));
 /*console.log(arrayCreate([1, 2, 3, 4, 5, 6, 7, 8, 9], 5).map(a => a.join('')));
 console.log(arrayCreate([1, 2, 3, 4, 5, 6, 7, 8, 9], 6).map(a => a.join('')));*/

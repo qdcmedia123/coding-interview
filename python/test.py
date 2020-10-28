@@ -1,11 +1,14 @@
-ini_dict = [{'equity':'', 'a':5, 'b':10, 'c':90}, 
-         {'equity':'','a':45, 'b':78},             {'equity':'', 'a':90, 'c':10}] 
-result = {}
-for d in ini_dict:
-	for k in d.keys():
-		if k == 'equity':
-			result[k] = d[k]
-		else:
-			result[k] = result.get(k,0) + d[k]
 
-print(result)
+def permute(nums):
+	#defining variable 
+	result_parms = [[]]
+	for n in nums:
+		new_perms = []
+		for perm in result_parms:
+			for i in range(len(perm) + 1):
+				new_perms.append(perm[i:] + [n] + perm[:i])
+				result_parms = new_perms;
+	return result_parms
+#Create the possible number com
+my_nums = [1,2,3]
+print(permute(my_nums));
