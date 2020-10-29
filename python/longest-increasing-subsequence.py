@@ -1,33 +1,56 @@
-# Dynamic programming Python implementation 
-# of LIS problem 
+def subsequence(seq):
+    if not seq:
+        return seq
 
-# lis returns length of the longest 
-# increasing subsequence in arr of size n 
-def lis(arr): 
-    n = len(arr) 
+    M = [None] * len(seq)    # offset by 1 (j -> j-1)
+    P = [None] * len(seq)
 
-    # Declare the list (array) for LIS and 
-    # initialize LIS values for all indexes 
-    lis = [1]*n 
+    # Since we have at least one element in our list, we can start by 
+    # knowing that the there's at least an increasing subsequence of length one:
+    # the first element.
+    L = 1
+    M[0] = 0
 
-    # Compute optimized LIS values in bottom up manner 
-    for i in range (1 , n): 
-        for j in range(0 , i): 
-            if arr[i] > arr[j] and lis[i]< lis[j] + 1 : 
-                lis[i] = lis[j]+1
+    # Looping over the sequence starting from the second element
+    for i in range(1, len(seq)):
+        # Binary search: we want the largest j <= L
+        #  such that seq[M[j]] < seq[i] (default j = 0),
+        #  hence we want the lower bound at the end of the search process.
+        lower = 0
+        upper = L
 
-    # Initialize maximum to 0 to get 
-    # the maximum of all LIS 
-    maximum = 0
+        # Since the binary search will not look at the upper bound value,
+        # we'll have to check that manually
+        if seq[M[upper-1]] < seq[i]:
+            j = upper
 
-    # Pick maximum of all LIS values 
-    for i in range(n): 
-        maximum =  lis[i]
+        else:
+            # actual binary search loop
+            while upper - lower > 1:
+                mid = (upper + lower) // 2
+                if seq[M[mid-1]] < seq[i]:
+                    lower = mid
+                else:
+                    upper = mid
 
-    return lis 
-# end of lis function 
+            j = lower    # this will also set the default value to 0
 
-# Driver program to test above function 
-arr = [87,88,91, 10, 22, 9,92, 94, 33, 21, 50, 41, 60, 80]
-print ( lis(arr) )
-# This code is contributed by Nikhil Kumar Singh 
+        P[i] = M[j-1]
+
+        if j == L or seq[i] < seq[M[j]]:
+            M[j] = i
+            L = max(L, j+1)
+
+    # Building the result: [seq[M[L-1]], seq[P[M[L-1]]], seq[P[P[M[L-1]]]], ...]
+    result = []
+    pos = M[L-1]
+    for _ in range(L):
+        result.append(seq[pos])
+        pos = P[pos]
+
+    return result[::-1]    # reversing
+
+
+sample = [87,88,91, 10, 22, 9,92, 94, 33, 21, 50, 41, 60, 80];
+
+print(subsequence(sample))

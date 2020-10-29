@@ -3,7 +3,7 @@ function findLongestIncreasingSequence(array) {
       fork = null;
 
   // Always add the first value to the sequence
-  sequence.push(array[0]);
+  sequence.push(array[3]);
 
   // Reduce the array with. Since no initial accumulator is given,
   // the first value in the array is used
