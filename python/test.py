@@ -1,6 +1,11 @@
-# is monotonic array 
-def isMonotonic(A):
-	return (all(A[i] >= A[i+1] for i in range(len(A)-1)) or 
-		all(A[i] <= A[i+1] for i in range(len(A) -1)))
+data_list = [-5, -23, 5, 0, 23, -6, 23, 67]
+new_list = []
 
-print(isMonotonic([1,2,1]))
+while data_list:
+	minimum = data_list[0]
+	for x in data_list:
+		if x < minimum:
+			minimum = x
+	new_list.append(minimum)
+	data_list.remove(minimum)
+print new_list

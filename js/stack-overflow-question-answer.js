@@ -1,3 +1,25 @@
+let properties = {
+  folder_name: "test",
+  user_email: "test@example.com",
+  user_agreed: 1,
+  site: "example.com"
+};
+
+let mapping = {
+  folder_name: "Folder name",
+  user_email: "User email",
+  user_agreed: "User agreed",
+  site: "Site"
+};
+
+let mapped = Object.keys(properties).reduce((acc, key) => {
+  acc[mapping[key]] = properties[key];
+  return acc;
+}, {});
+
+console.log(mapped);
+
+
 const renameKeys = (keysMap, obj) =>
   Object.keys(obj).reduce(
     (acc, key) => ({
@@ -148,7 +170,7 @@ function checkNested(obj, level,  ...rest) {
   return checkNested(obj[level], ...rest)
 }
 
-
+// Sunday 1 OCT
 const test = { level1:{ level2:{ level3:'level3'} } };
 checkNested(test, 'level1', 'level2', 'level3'); // true
 checkNested(test, 'level1', 'level2', 'foo'); // fals
