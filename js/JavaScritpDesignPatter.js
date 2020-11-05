@@ -124,6 +124,99 @@ processRequest('[1,2,3]', chain)
 processRequest({}, chain)
 
 
+// Proxy pattern
+/*
+A proxy is an object that controls access to another object, called subject. 
+Both have identical interface and this allows us to transparently 
+swap one for the other. A proxy intercepts all or some of the 
+operations that are meant to be executed on the subject, modifying their behavior.
+*/
+// https://itnext.io/design-patterns-in-nodejs-990fed17c49c
+
+
+// Adaptar 
+//https://blog.logrocket.com/design-patterns-in-node-js-2/
+/*
+It is used to turn a foreign interface into a common interface. 
+Let’s assume that in the project you get the data from some storage using
+ the following class.
+*/
+// Example the serivce that you have created for admin panel is adaptor 
+// Another example 
+// async.js
+var FB = require('fb');
+var config = require('config/config');
+
+module.exports = function FacebookAdapter() {
+  FB.options({ version: 'v2.8' });
+  FB.setAccessToken(config.FB_TOKEN);
+
+  this.fetch = function (pathname, options) {
+    return new Promise(
+      function (resolve, reject) {
+        FB.api(
+          pathname,
+          'get',
+          options,
+          function (response) {
+            if (!response) {
+              reject('Error occurred');
+            }
+
+            if (response.error) {
+              reject(response.error.message);
+            }
+
+            resolve(response);
+          }
+        );
+      }
+    );
+  };
+};
+
+
+// Decorator pattern
+/*
+The decorator pattern is definitely one of my top five favorite design patterns because it helps extend 
+the functionality of an object in a very elegant way. This pattern is used to 
+dynamically extend or even change the behavior of an object during run-time. 
+The effect might seem a lot like class inheritance, but this pattern allows you 
+to switch between behaviors during the same execution, which is something 
+inheritance does not.
+*/
+
+class Pizza {
+    constructor() {
+        this.base_price = 10
+    }
+    calculatePrice() {
+        return this.base_price
+    }
+}
+
+function addTopping(pizza, topping, price) {
+
+    let prevMethod = pizza.calculatePrice
+    pizza.toppings = [...(pizza.toppings || []), topping]
+    pizza.calculatePrice = function() {
+        return price + prevMethod.apply(pizza)
+    }
+    return pizza
+}
+
+let oPizza = new Pizza()
+
+oPizza = addTopping(
+            addTopping(
+                oPizza, "muzzarella", 10
+            ), "anana", 100
+        )
+
+console.log("Toppings: ", oPizza.toppings.join(", "))
+console.log("Total price: ", oPizza.calculatePrice())
+
+
 
 //////////////////////////////////////
 // Router design pattern

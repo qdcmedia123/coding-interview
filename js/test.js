@@ -1,14 +1,26 @@
-const raw = {
-  item1: { key: 'sdfd', value:'sdfd' },
-  item2: { key: 'sdfd', value:'sdfd' },
-  item3: { key: 'sdfd', value:'sdfd' }
-};
+// Creating unique array number 
 
-const allowed = ['item1', 'item3'];
+function uniqueArray(array, size) {
+	var result = [];
 
-const filtered = Object.keys(raw).filter(item => allowed.includes(item)).reduce((acc, key) => {
-   acc[key] = raw[key];
-   return acc;
-}, {});
+	// First array and size must be equal 
+	if(array.length !== size) {
+		return;
+	}
+	array.forEach(function iter(parts) {
+		return function (v) {
+			var temp = parts.concat(v);
+			if(parts.includes(v)) {
+				return;
+			}
+			if(temp.length === size) {
+				result.push(temp);
+				return;
+			}
 
-console.log(filtered)
+			array.forEach(iter(temp));
+		}
+	}([]))
+	return result;
+}
+console.log(uniqueArray([1,2,3], 3));
