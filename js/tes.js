@@ -1,26 +1,15 @@
-function findLongestIncreasingSequence(array) {
-	var sequence = [], fork = null;
+// JS Exchanging key and its value 
+const raw = {
+  item1: { key: 'sdfd', value:'sdfd' },
+  item2: { key: 'sdfd', value:'sdfd' },
+  item3: { key: 'sdfd', value:'sdfd' }
+};
 
-	// Slice the firt array value to the 
-	sequence.push(array[0]);
+const allowed = ['item1', 'item3'];
 
-	// Reduce the array with privious, current, index 
-	array.reduce(function(previous, current, index) {
-		if(current > previous) {
-			sequence.push(current);
-			return current;
-		}
+const filter = Object.keys(raw).filter(item => allowed.includes(item)).reduce((acc, key) => {
+	acc[key] = raw[key];
+	return acc;
+}, {});
 
-		if(previous > current) {
-			fork = findLongestIncreasingSequence(array.slice(index));
-		}
-
-		return previous;
-	});
-
-	return fork && fork.length > sequence.length ? fork : sequence;
-}
-
-var sample = [87,88,91, 10, 22, 9,92, 94, 33, 21, 50, 41, 60, 80];
-
-console.log(findLongestIncreasingSequence(sample)); // => [ 87, 88, 91, 92, 94 ])
+console.log(filter)

@@ -1,3 +1,34 @@
+
+// The last line was 135 
+function bubbleSort(array) {
+  var done = false;
+  while(!done) {
+    done = true;
+    for (var i = 1; i < array.length; i += 1) {
+      if(array[i-1] > array[i]) {
+        done = false;
+        var tmp = array[i-1];
+        array[i-1] = array[i];
+        array[i] = tmp;
+      }
+    }
+  }
+
+  return array;
+}
+
+var numbers = [12, 10, 15, 11, 14, 13, 16];
+bubbleSort(numbers);
+console.log(numbers);
+
+const obj = [
+  { id: 10, color: "red" },
+  { id: 20, color: "blue" },
+  { id: 30, color: "green" }
+].reduce((acc, cur) => ({ ...acc, [cur.color]: cur.id }), {})
+
+
+
 let properties = {
   folder_name: "test",
   user_email: "test@example.com",

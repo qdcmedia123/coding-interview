@@ -2,22 +2,22 @@
 # return the sum of values of dictionary 
 # with same keys in list of dictionary 
   
-import collections, functools, operator 
+# import collections, functools, operator 
   
-# Initialising list of dictionary 
-ini_dict = [{'a':5, 'b':10, 'c':90}, 
-            {'a':45, 'b':78},  
-            {'a':90, 'c':10}] 
+# # Initialising list of dictionary 
+# ini_dict = [{'a':5, 'b':10, 'c':90}, 
+#             {'a':45, 'b':78},  
+#             {'a':90, 'c':10}] 
   
   
-# printing initial dictionary 
-print ("initial dictionary", str(ini_dict)) 
+# # printing initial dictionary 
+# print ("initial dictionary", str(ini_dict)) 
   
-# sum the values with same keys 
-result = dict(functools.reduce(operator.add, 
-         map(collections.Counter, ini_dict))) 
+# # sum the values with same keys 
+# result = dict(functools.reduce(operator.add, 
+#          map(collections.Counter, ini_dict))) 
   
-print("resultant dictionary : ", str(result)) 
+# print("resultant dictionary : ", str(result)) 
 
 
 #Method #3: Naive Method
@@ -25,37 +25,37 @@ print("resultant dictionary : ", str(result))
 # return the sum of values of dictionary 
 # with same keys in list of dictionary 
 
-from operator import itemgetter 
+# from operator import itemgetter 
 
-# Initialising list of dictionary 
-ini_dict = [{'a':5, 'b':10, 'c':90}, 
-			{'a':45, 'b':78}, 
-			{'a':90, 'c':10}] 
+# # Initialising list of dictionary 
+# ini_dict = [{'a':5, 'b':10, 'c':90}, 
+# 			{'a':45, 'b':78}, 
+# 			{'a':90, 'c':10}] 
 
-# printing initial dictionary 
-print ("initial dictionary", str(ini_dict)) 
+# # printing initial dictionary 
+# print ("initial dictionary", str(ini_dict)) 
 
-# sum the values with same keys 
-result = {} 
-for d in ini_dict: 
-	for k in d.keys(): 
-		result[k] = result.get(k, 0) + d[k] 
-
-
-print("resultant dictionary : ", str(result)) 
+# # sum the values with same keys 
+# result = {} 
+# for d in ini_dict: 
+# 	for k in d.keys(): 
+# 		result[k] = result.get(k, 0) + d[k] 
 
 
-# # Native method of suming the all the calue of the array 
-# ini_dict = [{'equity':'', 'a':5, 'b':10, 'c':90}, 
-#             {'equity':'','a':45, 'b':78},  
-#             {'equity':'', 'a':90, 'c':10}] 
+# print("resultant dictionary : ", str(result)) 
 
-# result = {}
-# for d in ini_dict:
-# 	for k in d.keys():
-# 		if(k == 'equity'):
-# 			result[k] = d[k]
-# 		else:
-# 			result[k] = result.get(k, 0) + d[k]
 
-# print(result)
+# Native method of suming the all the calue of the array 
+ini_dict = [{'equity':'', 'a':5, 'b':10, 'c':90}, 
+            {'equity':'','a':45, 'b':78},  
+            {'equity':'', 'a':90, 'c':10}] 
+
+result = {}
+for d in ini_dict:
+	for k in d.keys():
+		if(k == 'equity'):
+			result[k] = d[k]
+		else:
+			result[k] = result.get(k, 0) + d[k]
+
+print(result)

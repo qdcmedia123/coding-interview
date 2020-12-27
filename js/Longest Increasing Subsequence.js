@@ -32,5 +32,6 @@ function findLongestIncreasingSequence(array) {
 }
 
 var sample = [87,88,91, 10, 22, 9,92, 94, 33, 21, 50, 41, 60, 80];
+// [10, 22, 33, 41, 60, 80]
 
 console.log(findLongestIncreasingSequence(sample)); // => [ 87, 88, 91, 92, 94 ])

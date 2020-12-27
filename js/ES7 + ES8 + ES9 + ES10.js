@@ -1,3 +1,15 @@
+// Finally, moving on to ES10 (Or ES2019)!
+// Array.flat: [[1,2],3]).flat() // [1,2,3]
+// Array.flatMap: equivalent of map().flat()
+// Object.fromEntries: reverse operation from Object.entries (see here)
+// String.trimStart() & String.trimEnd(): Remove extra spaces in a string
+// Optional Catch binding: remove the need to add a param to the catch (Now you can do } catch {instead of } catch(e) {
+// Function.toString has been revisited to have a consistent behaviour 🥳🥳🥳
+// Symbol Description
+// BigInt — arbitrary large numbers (Thanks @redeyes2015 for correction)
+// Improvement on Unicode support for JSON.stringify()
+// Array.sort now retains order if keys are equal
+
 string.padEnd():
 //Exponential Operator:
 a ** b ** c //is equal to 
@@ -72,3 +84,26 @@ function sum(a, b) {
 }
 
 console.log(sum.toString());
+
+//Optional Chaining
+const test = myObject && myObject.a;
+// equivalent to
+const test = myObject?.a;
+
+//
+let x = 0 || 1; // x is 1 because 0 is falsy
+let x = 0 ?? 1; // Since 0 is defined, x is 0
+
+const res = await fetch(...);
+
+// String.prototype.replaceAll()
+
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+const regex = /dog/gi;
+
+console.log(p.replaceAll(regex, 'ferret'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+
+console.log(p.replaceAll('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the monkey reacted, was it really lazy?"

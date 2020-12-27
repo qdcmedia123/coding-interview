@@ -226,3 +226,12 @@ console.log("Total price: ", oPizza.calculatePrice())
 //////////////////////////////////////
 // Middleware
 //////////////////////////////////////
+
+
+//////////////////////////////////////
+// Authentical & Authorization
+/// Authentication with Json Web Tokens 
+/// List you use passportjs etc to auth
+/// Authorization means after auth what user is authorized to see because resource to to any operation for certain resource for example CRUD user might need certain permission etc
+//////////////////////////////////////
+ 
