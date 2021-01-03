@@ -1,4 +1,15 @@
 
+//How to round up number to nearest 100/1000 depending on number, in JavaScript?
+
+function roundup(v) {
+    return Math.pow(10, Math.ceil(Math.log10(v)));
+}
+
+console.log(roundup(87));   //   100
+console.log(roundup(776));  //  1000
+console.log(roundup(2333)); // 10000
+
+
 // The last line was 135 
 function bubbleSort(array) {
   var done = false;
