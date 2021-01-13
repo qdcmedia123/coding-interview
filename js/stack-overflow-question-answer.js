@@ -1,4 +1,24 @@
 
+const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
+const allowed = ['name'];
+const map = data.map(function(item) {
+  const filtered = Object.keys(item)
+  .filter(key => allowed.includes(key))
+  .reduce((obj, key) => {
+    obj[key] = item[key];
+    return obj;
+  }, {});
+
+  return filtered;
+})
+
+console.log(map);
+
+
+Math.round(101600 / 10000) * 10000 // --> 100000
+Math.floor(101600 / 10000) * 10000 // --> 100000
+Math.ceil (101600 / 10000) * 10000 // --> 110000
+
 //How to round up number to nearest 100/1000 depending on number, in JavaScript?
 
 function roundup(v) {
