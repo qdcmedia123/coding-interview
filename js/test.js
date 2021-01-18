@@ -1,12 +1,8 @@
-const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
-const allowed = ['id', 'name'];
-const getNameOnly = data.map(function(item) {
-	const filter = Object.keys(item).filter(key => allowed.includes(key))
-	.reduce((acc, key) => {
-		acc[key] = item[key];
-		return acc;
-	}, {});
-	return filter;
-})
+const data = {
+	rows: 34,
+	num: function () {
+		return this.rows;
+	}
+};
 
-console.log(getNameOnly)
+console.log(data.num())

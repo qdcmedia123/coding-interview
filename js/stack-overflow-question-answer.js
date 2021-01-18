@@ -1,4 +1,5 @@
 
+// Start from next  time 471
 const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
 const allowed = ['name'];
 const map = data.map(function(item) {
@@ -47,6 +48,25 @@ function bubbleSort(array) {
 
   return array;
 }
+
+let bubbleSort = (inputArr) => {
+    let len = inputArr.length;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < len; i++) {
+            if (inputArr[i] > inputArr[i + 1]) {
+                let tmp = inputArr[i];
+                inputArr[i] = inputArr[i + 1];
+                inputArr[i + 1] = tmp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+    return inputArr;
+};
+
+
 
 var numbers = [12, 10, 15, 11, 14, 13, 16];
 bubbleSort(numbers);
