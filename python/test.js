@@ -1,1 +1,0 @@
-await async 'hello';

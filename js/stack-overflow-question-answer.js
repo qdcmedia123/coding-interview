@@ -1,3 +1,65 @@
+var a = [23, 45, 12, 67];
+a.unshift(34);
+console.log(a); // [34, 23, 45, 12, 67]
+
+
+// Creating array with the range 
+let arryRange = [...Array(10).keys()];
+
+// Creating array with the range 
+Array.from({length: 10}, (_, i) => i + 1)
+
+
+//finding all missing elements in an array/range javascript
+function findMissingElements(arr) {
+  arr = arr.slice(0).sort(function(a,b) {
+    return a-b;
+  })
+  let next = 1;
+  let missing = [];
+  for(let i = 0; i < arr.length; i++) {
+    while(next < arr[i]) {
+      missing.push(next);
+      next++;
+    }
+    next++;
+  }
+
+  return missing;
+}
+
+console.log(findMissingElements([1,5,2,7]));
+
+// Updated: finding all missing elements in an array/range javascript
+
+
+
+var items = [
+  { name: 'Edward', value: 21 },
+  { name: 'Sharpe', value: 37 },
+  { name: 'And', value: 45 },
+  { name: 'The', value: -12 },
+  { name: 'Magnetic', value: 13 },
+  { name: 'Zeros', value: 37 }
+];
+
+// sort by value
+items.sort(function (a, b) {
+  return a.value - b.value;
+});
+
+console.log(items)
+
+
+const object1 = { a: 1, b: 2, c: 3 };
+
+const object2 = Object.fromEntries(
+  Object.entries(object1)
+  .map(([ key, val ]) => [ key, val * 2 ])
+);
+
+console.log(object2);
+// { a: 2, b: 4, c: 6 }
 
 // Start from next  time 471
 const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
