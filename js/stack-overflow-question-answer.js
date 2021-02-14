@@ -113,7 +113,7 @@ console.log(roundup(776));  //  1000
 console.log(roundup(2333)); // 10000
 
 //
-// The last line was 135 
+// 
 function bubbleSort(array) {
   var done = false;
   while(!done) {
