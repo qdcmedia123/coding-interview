@@ -1,19 +1,14 @@
-function findMissingElements(arr) {
-  arr = arr.slice(0).sort(function(a,b) {
-    return a-b
-  });
-  let next = 1;
-  let missing = [];
-  for(let i = 0; i < arr.length; i++) {
-    while(next < arr[i]) {
-      missing.push(next);
-      next++;
-    }
-    next++;
-  }
+const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
+const allowed = ['name'];
 
-  return missing;
+const getOnlyName = data.map(function(item) {
+	const onlyName = Object.keys(item)
+	            .filter(key => allowed.includes(key))
+	            .reduce((acc, key) => {
+	            	acc[key] = item[key];
+	            	return acc;
+	            }, {});
+	return onlyName;
+});
 
-}
-
-console.log(findMissingElements([1,5,2,7], 1, 10));
+console.log(getOnlyName)

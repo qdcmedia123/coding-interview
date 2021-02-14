@@ -32,6 +32,26 @@ console.log(findMissingElements([1,5,2,7]));
 
 // Updated: finding all missing elements in an array/range javascript
 
+function findMissingElements(arr, min, max) {
+  // Copy the array and sort the array 
+  arr = arr.slice(0).sort(function(a,b) {
+    return a-b;
+  });
+  let missing  = [];
+  let next = min;
+  for(let i = 0; i <= max; i++) {
+    if(max > next) {
+      missing.push(next);
+      next++
+    }
+    next++;
+  }
+
+  return missing;
+}
+// Find the missing element from the array 
+console.log(findMissingElements([1,5,2,7], 1, 10));
+
 
 
 var items = [
@@ -92,7 +112,7 @@ console.log(roundup(87));   //   100
 console.log(roundup(776));  //  1000
 console.log(roundup(2333)); // 10000
 
-
+//
 // The last line was 135 
 function bubbleSort(array) {
   var done = false;
