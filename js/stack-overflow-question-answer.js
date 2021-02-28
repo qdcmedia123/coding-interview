@@ -81,7 +81,7 @@ const object2 = Object.fromEntries(
 console.log(object2);
 // { a: 2, b: 4, c: 6 }
 
-// Start from next  time 471
+
 const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
 const allowed = ['name'];
 const map = data.map(function(item) {
