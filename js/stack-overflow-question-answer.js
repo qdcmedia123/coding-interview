@@ -1,3 +1,39 @@
+
+//How to convert simple array into two-dimensional array (matrix) with Javascript
+function listToMatrix(list, elementsPerSubArray) {
+    var matrix = [], i, k;
+
+    for (i = 0, k = -1; i < list.length; i++) {
+        if (i % elementsPerSubArray === 0) {
+            k++;
+            matrix[k] = [];
+        }
+
+        matrix[k].push(list[i]);
+    }
+
+    return matrix;
+}
+
+var matrix = listToMatrix([1, 2, 3, 4, 4, 5, 6, 7, 8, 9], 3);
+// result: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+////
+const arr = [1,2,3,4,5,6,7,8,9];
+    
+const newArr = [];
+while(arr.length) newArr.push(arr.splice(0,3));
+    
+console.log(newArr);
+/*
+[
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+*/
+
+
 var a = [23, 45, 12, 67];
 a.unshift(34);
 console.log(a); // [34, 23, 45, 12, 67]
