@@ -1,3 +1,9 @@
+//If you want to avoid memory leaks, use WeakMap so that the garbage collector can remove all unreferenced objects in a script.
+
+let bellow = {name: "bellow"};
+const weakMap = new WeakMap();
+weakMap.set(bellow, 'noah');
+bellow = null;
 
 //How to convert simple array into two-dimensional array (matrix) with Javascript
 function listToMatrix(list, elementsPerSubArray) {
