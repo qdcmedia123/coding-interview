@@ -5,6 +5,43 @@
   https://www.geeksforgeeks.org/finding-sum-of-digits-of-a-number-until-sum-becomes-single-digit/
 */
 
+// Following function i wrote which is not optimize 
+
+// function getSum(n) {
+//   let sum;
+//   if(!sum) {
+//     return;
+//   }
+//    sum = n
+//     .toString()
+//     .split("")
+//     .reduce((a, b) => {
+//       return parseInt(a) + parseInt(b);
+//     });
+
+//   if (sum.toString().length > 1) {
+//     return getSum(sum);
+//   }
+
+//   return sum
+//     .toString()
+//     .split("")
+//     .reduce((a, b) => {
+//       return parseInt(a) + parseInt(b);
+//     });
+// }
+
+// Options 1
+function getSum(n)
+{
+    if (n == 0)
+        return 0;
+         
+    return (n % 9 == 0) ? 9 : (n % 9);
+}
+ 
+
+// Options 2
 let n = 159;
     //Function to get sum of digits
     function getSum(n) {
