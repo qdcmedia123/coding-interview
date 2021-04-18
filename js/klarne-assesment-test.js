@@ -370,8 +370,6 @@ const latestExpensive = expenses.sort((a, b) => {
    return new Date(b.time) - new Date(a.time);
 })[0];
 
-console.log("df");
-
 // Group the expensive by category
 const groupByCategory = expenses.reduce(function (r, a) {
    r[a.category] = r[a.category] || [];
@@ -410,3 +408,45 @@ const getExpensiveBettwen = expenses.filter((item) => {
 // Detuct the expensive from the same month from the income object
 // You need to have expensive grouped and sum by the month
 // You need to have income summed and grouped by month
+
+// Calculate the balance in a specific category within specific time period
+
+const getBalanceByCategoryInPeriod = (
+   transactions = [],
+   category,
+   start,
+   end
+) => {
+   const getExpensiveBettwen = transactions.filter((item) => {
+      if (new Date(item.time) >= start && new Date(item.time) < end) {
+         return item;
+      }
+   });
+
+   if (Object.entries(getExpensiveBettwen).length > 0) {
+      const getCategoryRows = getExpensiveBettwen.filter((transaction) => {
+         return transaction.category === category;
+      });
+
+      if (getCategoryRows.length > 0) {
+         const sum = getCategoryRows.reduce((a, b) => {
+            return a + b.amount;
+         }, 0);
+
+         return sum;
+      }
+      return 0;
+   }
+   return 0;
+};
+
+const getTheBalance = getBalanceByCategoryInPeriod(
+   income,
+   "salary",
+   new Date("2020-03-01"),
+   new Date("2021-03-31")
+);
+
+// Find all transactions that have the same source, target, category, and with a time difference of less than 1 minute
+
+const findSTCATimeDifference = () => {};
