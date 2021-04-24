@@ -1,187 +1,200 @@
+//Breaking an Integer to get Maximum Product
+// Reference
+//https://www.geeksforgeeks.org/breaking-integer-to-get-maximum-product/
+
+function maxProd(n) {
+  if (n === 2 || n === 3) return n - 1;
+
+  let res = 1;
+  while (n > 4) {
+    n -= 3;
+    res *= 3; // keep multiplying 3 to res
+  }
+  return n * res;
+}
 
 //Most efficient method to groupby on an array of objects
 const expenses = [
-   {
-      "id":1,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-332,
-      "category":"eating_out",
-      "time":"2020-08-06T16:38:37.000"
-   },
-   {
-      "id":2,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-149,
-      "category":"other",
-      "time":"2021-04-03T16:13:29.000"
-   },
-   {
-      "id":3,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-403,
-      "category":"other",
-      "time":"2020-12-08T01:20:46.000"
-   },
-   {
-      "id":4,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-11,
-      "category":"eating_out",
-      "time":"2020-10-19T19:12:22.000"
-   },
-   {
-      "id":5,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-61,
-      "category":"groceries",
-      "time":"2020-06-16T15:44:09.000"
-   },
-   {
-      "id":6,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-8,
-      "category":"other",
-      "time":"2020-08-20T09:56:17.000"
-   },
-   {
-      "id":7,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-489,
-      "category":"groceries",
-      "time":"2020-04-17T09:44:24.000"
-   },
-   {
-      "id":8,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-416,
-      "category":"eating_out",
-      "time":"2020-12-25T17:09:50.000"
-   },
-   {
-      "id":9,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-98,
-      "category":"eating_out",
-      "time":"2020-06-07T21:26:18.000"
-   },
-   {
-      "id":10,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-343,
-      "category":"eating_out",
-      "time":"2020-10-27T15:15:39.000"
-   },
-   {
-      "id":11,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-144,
-      "category":"groceries",
-      "time":"2020-08-27T06:52:32.000"
-   },
-   {
-      "id":12,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-49,
-      "category":"groceries",
-      "time":"2021-03-19T03:54:11.000"
-   },
-   {
-      "id":13,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-362,
-      "category":"other",
-      "time":"2020-10-20T06:26:50.000"
-   },
-   {
-      "id":14,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-157,
-      "category":"eating_out",
-      "time":"2021-03-28T15:30:27.000"
-   },
-   {
-      "id":15,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-465,
-      "category":"eating_out",
-      "time":"2021-01-17T23:02:56.000"
-   },
-   {
-      "id":16,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-423,
-      "category":"other",
-      "time":"2020-04-14T13:54:15.000"
-   },
-   {
-      "id":17,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-92,
-      "category":"eating_out",
-      "time":"2020-11-01T06:20:28.000"
-   },
-   {
-      "id":18,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-146,
-      "category":"eating_out",
-      "time":"2020-11-27T23:00:04.000"
-   },
-   {
-      "id":19,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-107,
-      "category":"other",
-      "time":"2020-06-29T10:46:23.000"
-   },
-   {
-      "id":20,
-      "sourceAccount":"my_account",
-      "targetAccount":"coffe_shop",
-      "amount":-215,
-      "category":"groceries",
-      "time":"2021-02-28T06:55:01.000"
-   }
+  {
+    id: 1,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -332,
+    category: "eating_out",
+    time: "2020-08-06T16:38:37.000",
+  },
+  {
+    id: 2,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -149,
+    category: "other",
+    time: "2021-04-03T16:13:29.000",
+  },
+  {
+    id: 3,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -403,
+    category: "other",
+    time: "2020-12-08T01:20:46.000",
+  },
+  {
+    id: 4,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -11,
+    category: "eating_out",
+    time: "2020-10-19T19:12:22.000",
+  },
+  {
+    id: 5,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -61,
+    category: "groceries",
+    time: "2020-06-16T15:44:09.000",
+  },
+  {
+    id: 6,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -8,
+    category: "other",
+    time: "2020-08-20T09:56:17.000",
+  },
+  {
+    id: 7,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -489,
+    category: "groceries",
+    time: "2020-04-17T09:44:24.000",
+  },
+  {
+    id: 8,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -416,
+    category: "eating_out",
+    time: "2020-12-25T17:09:50.000",
+  },
+  {
+    id: 9,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -98,
+    category: "eating_out",
+    time: "2020-06-07T21:26:18.000",
+  },
+  {
+    id: 10,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -343,
+    category: "eating_out",
+    time: "2020-10-27T15:15:39.000",
+  },
+  {
+    id: 11,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -144,
+    category: "groceries",
+    time: "2020-08-27T06:52:32.000",
+  },
+  {
+    id: 12,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -49,
+    category: "groceries",
+    time: "2021-03-19T03:54:11.000",
+  },
+  {
+    id: 13,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -362,
+    category: "other",
+    time: "2020-10-20T06:26:50.000",
+  },
+  {
+    id: 14,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -157,
+    category: "eating_out",
+    time: "2021-03-28T15:30:27.000",
+  },
+  {
+    id: 15,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -465,
+    category: "eating_out",
+    time: "2021-01-17T23:02:56.000",
+  },
+  {
+    id: 16,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -423,
+    category: "other",
+    time: "2020-04-14T13:54:15.000",
+  },
+  {
+    id: 17,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -92,
+    category: "eating_out",
+    time: "2020-11-01T06:20:28.000",
+  },
+  {
+    id: 18,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -146,
+    category: "eating_out",
+    time: "2020-11-27T23:00:04.000",
+  },
+  {
+    id: 19,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -107,
+    category: "other",
+    time: "2020-06-29T10:46:23.000",
+  },
+  {
+    id: 20,
+    sourceAccount: "my_account",
+    targetAccount: "coffe_shop",
+    amount: -215,
+    category: "groceries",
+    time: "2021-02-28T06:55:01.000",
+  },
 ];
 
 result = expenses.reduce(function (r, a) {
-        r[a.category] = r[a.category] || [];
-        r[a.category].push(a);
-        return r;
- }, Object.create(null));
+  r[a.category] = r[a.category] || [];
+  r[a.category].push(a);
+  return r;
+}, Object.create(null));
 
 //
-// Find the sum of each category 
+// Find the sum of each category
 const sumOfEachCategory = Object.keys(result).map((key) => {
-      let getSum = {};
-      if(key) {
-             getSum[key] = result[key].reduce((a,b) => {
-            return a + b.amount
-     }, 0)
-      }
-      
+  let getSum = {};
+  if (key) {
+    getSum[key] = result[key].reduce((a, b) => {
+      return a + b.amount;
+    }, 0);
+  }
 
-    return getSum;
-})
+  return getSum;
+});
 
 /*
 
@@ -190,7 +203,7 @@ const sumOfEachCategory = Object.keys(result).map((key) => {
   https://www.geeksforgeeks.org/finding-sum-of-digits-of-a-number-until-sum-becomes-single-digit/
 */
 
-// Following function i wrote which is not optimize 
+// Following function i wrote which is not optimize
 
 // function getSum(n) {
 //   let sum;
@@ -217,34 +230,30 @@ const sumOfEachCategory = Object.keys(result).map((key) => {
 // }
 
 // Options 1
-function getSum(n)
-{
-    if (n == 0)
-        return 0;
-         
-    return (n % 9 == 0) ? 9 : (n % 9);
+function getSum(n) {
+  if (n == 0) return 0;
+
+  return n % 9 == 0 ? 9 : n % 9;
 }
- 
 
 // Options 2
 let n = 159;
-    //Function to get sum of digits
-    function getSum(n) {
-        let sum = 0;
-        while (n > 0 || sum > 9) {
-             if(n == 0) {
-                n = sum;
-                sum = 0;
-             }
-             sum = sum + n % 10;
-             n = Math.floor(n / 10);
-        }
-        return sum;
+//Function to get sum of digits
+function getSum(n) {
+  let sum = 0;
+  while (n > 0 || sum > 9) {
+    if (n == 0) {
+      n = sum;
+      sum = 0;
+    }
+    sum = sum + (n % 10);
+    n = Math.floor(n / 10);
+  }
+  return sum;
 }
 
-
 const findDuplicates = (arr) => {
-  let sorted_arr = arr.slice().sort(); // You can define the comparing function here. 
+  let sorted_arr = arr.slice().sort(); // You can define the comparing function here.
   // JS by default uses a crappy string compare.
   // (we use slice to clone the array so the
   // original array won't be modified)
@@ -255,49 +264,52 @@ const findDuplicates = (arr) => {
     }
   }
   return results;
-}
+};
 
 let duplicatedArray = [9, 9, 111, 2, 3, 4, 4, 5, 7];
-console.log(`The duplicates in ${duplicatedArray} are ${findDuplicates(duplicatedArray)}`);
+console.log(
+  `The duplicates in ${duplicatedArray} are ${findDuplicates(duplicatedArray)}`
+);
 
 //////////////////
 /// Want to learn new things check below link
 //////////////////
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
-
 //If you want to avoid memory leaks, use WeakMap so that the garbage collector can remove all unreferenced objects in a script.
 
-let bellow = {name: "bellow"};
+let bellow = { name: "bellow" };
 const weakMap = new WeakMap();
-weakMap.set(bellow, 'noah');
+weakMap.set(bellow, "noah");
 bellow = null;
 
 //How to convert simple array into two-dimensional array (matrix) with Javascript
 function listToMatrix(list, elementsPerSubArray) {
-    var matrix = [], i, k;
+  var matrix = [],
+    i,
+    k;
 
-    for (i = 0, k = -1; i < list.length; i++) {
-        if (i % elementsPerSubArray === 0) {
-            k++;
-            matrix[k] = [];
-        }
-
-        matrix[k].push(list[i]);
+  for (i = 0, k = -1; i < list.length; i++) {
+    if (i % elementsPerSubArray === 0) {
+      k++;
+      matrix[k] = [];
     }
 
-    return matrix;
+    matrix[k].push(list[i]);
+  }
+
+  return matrix;
 }
 
 var matrix = listToMatrix([1, 2, 3, 4, 4, 5, 6, 7, 8, 9], 3);
 // result: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 ////
-const arr = [1,2,3,4,5,6,7,8,9];
-    
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 const newArr = [];
-while(arr.length) newArr.push(arr.splice(0,3));
-    
+while (arr.length) newArr.push(arr.splice(0, 3));
+
 console.log(newArr);
 /*
 [
@@ -307,28 +319,25 @@ console.log(newArr);
 ]
 */
 
-
 var a = [23, 45, 12, 67];
 a.unshift(34);
 console.log(a); // [34, 23, 45, 12, 67]
 
-
-// Creating array with the range 
+// Creating array with the range
 let arryRange = [...Array(10).keys()];
 
-// Creating array with the range 
-Array.from({length: 10}, (_, i) => i + 1)
-
+// Creating array with the range
+Array.from({ length: 10 }, (_, i) => i + 1);
 
 //finding all missing elements in an array/range javascript
 function findMissingElements(arr) {
-  arr = arr.slice(0).sort(function(a,b) {
-    return a-b;
-  })
+  arr = arr.slice(0).sort(function (a, b) {
+    return a - b;
+  });
   let next = 1;
   let missing = [];
-  for(let i = 0; i < arr.length; i++) {
-    while(next < arr[i]) {
+  for (let i = 0; i < arr.length; i++) {
+    while (next < arr[i]) {
       missing.push(next);
       next++;
     }
@@ -338,39 +347,37 @@ function findMissingElements(arr) {
   return missing;
 }
 
-console.log(findMissingElements([1,5,2,7]));
+console.log(findMissingElements([1, 5, 2, 7]));
 
 // Updated: finding all missing elements in an array/range javascript
 
 function findMissingElements(arr, min, max) {
-  // Copy the array and sort the array 
-  arr = arr.slice(0).sort(function(a,b) {
-    return a-b;
+  // Copy the array and sort the array
+  arr = arr.slice(0).sort(function (a, b) {
+    return a - b;
   });
-  let missing  = [];
+  let missing = [];
   let next = min;
-  for(let i = 0; i <= max; i++) {
-    if(max > next) {
+  for (let i = 0; i <= max; i++) {
+    if (max > next) {
       missing.push(next);
-      next++
+      next++;
     }
     next++;
   }
 
   return missing;
 }
-// Find the missing element from the array 
-console.log(findMissingElements([1,5,2,7], 1, 10));
-
-
+// Find the missing element from the array
+console.log(findMissingElements([1, 5, 2, 7], 1, 10));
 
 var items = [
-  { name: 'Edward', value: 21 },
-  { name: 'Sharpe', value: 37 },
-  { name: 'And', value: 45 },
-  { name: 'The', value: -12 },
-  { name: 'Magnetic', value: 13 },
-  { name: 'Zeros', value: 37 }
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic", value: 13 },
+  { name: "Zeros", value: 37 },
 ];
 
 // sort by value
@@ -378,61 +385,61 @@ items.sort(function (a, b) {
   return a.value - b.value;
 });
 
-console.log(items)
-
+console.log(items);
 
 const object1 = { a: 1, b: 2, c: 3 };
 
 const object2 = Object.fromEntries(
-  Object.entries(object1)
-  .map(([ key, val ]) => [ key, val * 2 ])
+  Object.entries(object1).map(([key, val]) => [key, val * 2])
 );
 
 console.log(object2);
 // { a: 2, b: 4, c: 6 }
 
-
-const data = [{name: 'hello', id: 34} ,{name: 'hello', id: 34}, {name: 'hello', id: 34}];
-const allowed = ['name'];
-const map = data.map(function(item) {
+const data = [
+  { name: "hello", id: 34 },
+  { name: "hello", id: 34 },
+  { name: "hello", id: 34 },
+];
+const allowed = ["name"];
+const map = data.map(function (item) {
   const filtered = Object.keys(item)
-  .filter(key => allowed.includes(key))
-  .reduce((obj, key) => {
-    obj[key] = item[key];
-    return obj;
-  }, {});
+    .filter((key) => allowed.includes(key))
+    .reduce((obj, key) => {
+      obj[key] = item[key];
+      return obj;
+    }, {});
 
   return filtered;
-})
+});
 
 console.log(map);
 
-
-Math.round(101600 / 10000) * 10000 // --> 100000
-Math.floor(101600 / 10000) * 10000 // --> 100000
-Math.ceil (101600 / 10000) * 10000 // --> 110000
+Math.round(101600 / 10000) * 10000; // --> 100000
+Math.floor(101600 / 10000) * 10000; // --> 100000
+Math.ceil(101600 / 10000) * 10000; // --> 110000
 
 //How to round up number to nearest 100/1000 depending on number, in JavaScript?
 
 function roundup(v) {
-    return Math.pow(10, Math.ceil(Math.log10(v)));
+  return Math.pow(10, Math.ceil(Math.log10(v)));
 }
 
-console.log(roundup(87));   //   100
-console.log(roundup(776));  //  1000
+console.log(roundup(87)); //   100
+console.log(roundup(776)); //  1000
 console.log(roundup(2333)); // 10000
 
 //
 // Till here
 function bubbleSort(array) {
   var done = false;
-  while(!done) {
+  while (!done) {
     done = true;
     for (var i = 1; i < array.length; i += 1) {
-      if(array[i-1] > array[i]) {
+      if (array[i - 1] > array[i]) {
         done = false;
-        var tmp = array[i-1];
-        array[i-1] = array[i];
+        var tmp = array[i - 1];
+        array[i - 1] = array[i];
         array[i] = tmp;
       }
     }
@@ -442,23 +449,21 @@ function bubbleSort(array) {
 }
 
 let bubbleSort = (inputArr) => {
-    let len = inputArr.length;
-    let swapped;
-    do {
-        swapped = false;
-        for (let i = 0; i < len; i++) {
-            if (inputArr[i] > inputArr[i + 1]) {
-                let tmp = inputArr[i];
-                inputArr[i] = inputArr[i + 1];
-                inputArr[i + 1] = tmp;
-                swapped = true;
-            }
-        }
-    } while (swapped);
-    return inputArr;
+  let len = inputArr.length;
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < len; i++) {
+      if (inputArr[i] > inputArr[i + 1]) {
+        let tmp = inputArr[i];
+        inputArr[i] = inputArr[i + 1];
+        inputArr[i + 1] = tmp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+  return inputArr;
 };
-
-
 
 var numbers = [12, 10, 15, 11, 14, 13, 16];
 bubbleSort(numbers);
@@ -467,23 +472,21 @@ console.log(numbers);
 const obj = [
   { id: 10, color: "red" },
   { id: 20, color: "blue" },
-  { id: 30, color: "green" }
-].reduce((acc, cur) => ({ ...acc, [cur.color]: cur.id }), {})
-
-
+  { id: 30, color: "green" },
+].reduce((acc, cur) => ({ ...acc, [cur.color]: cur.id }), {});
 
 let properties = {
   folder_name: "test",
   user_email: "test@example.com",
   user_agreed: 1,
-  site: "example.com"
+  site: "example.com",
 };
 
 let mapping = {
   folder_name: "Folder name",
   user_email: "User email",
   user_agreed: "User agreed",
-  site: "Site"
+  site: "Site",
 };
 
 let mapped = Object.keys(properties).reduce((acc, key) => {
@@ -493,77 +496,74 @@ let mapped = Object.keys(properties).reduce((acc, key) => {
 
 console.log(mapped);
 
-
 const renameKeys = (keysMap, obj) =>
   Object.keys(obj).reduce(
     (acc, key) => ({
       ...acc,
-      ...{ [keysMap[key] || key]: obj[key] }
+      ...{ [keysMap[key] || key]: obj[key] },
     }),
     {}
   );
 
-
 keysMap = {
-  name: 'firstName',
-  job: 'passion'
+  name: "firstName",
+  job: "passion",
 };
 
 obj = {
-  name: 'Bobo',
-  job: 'Front-End Master'
+  name: "Bobo",
+  job: "Front-End Master",
 };
-
 
 console.log(renameKeys(keysMap, obj));
 // { firstName: 'Bobo', passion: 'Front-End Master' }
 
 //How do JavaScript closures work?
 function foo() {
-  const secret = Math.trunc(Math.random()*100)
+  const secret = Math.trunc(Math.random() * 100);
   return function inner() {
-    console.log(`The secret number is ${secret}.`)
-  }
+    console.log(`The secret number is ${secret}.`);
+  };
 }
-const f = foo() // `secret` is not directly accessible from outside `foo`
-f() // The only way to retrieve `secret`, is to invoke `f`
-
+const f = foo(); // `secret` is not directly accessible from outside `foo`
+f(); // The only way to retrieve `secret`, is to invoke `f`
 
 //How can I clone a JavaScript object except for one key?
-let x = {a: 1, b: 2, c: 3, z:26};
-let {b, ...y} = x;
-
+let x = { a: 1, b: 2, c: 3, z: 26 };
+let { b, ...y } = x;
 
 //How to print objects except one, without deleting anything (JavaScript)
-const obj = {1: {age: 10}, 2: {age: 20}};
-let key = 1
-console.log(Object.keys(obj).filter(x => x != key).reduce((ac,a) => ({...ac,[a]:obj[a]}),{}));
+const obj = { 1: { age: 10 }, 2: { age: 20 } };
+let key = 1;
+console.log(
+  Object.keys(obj)
+    .filter((x) => x != key)
+    .reduce((ac, a) => ({ ...ac, [a]: obj[a] }), {})
+);
 
 ///Using the new feature Object.fromEntries
-const obj = {1: {age: 10}, 2: {age: 20}};
-let key = 1
-let res = Object.fromEntries(Object.entries(obj).filter(x => x[0] != key));
+const obj = { 1: { age: 10 }, 2: { age: 20 } };
+let key = 1;
+let res = Object.fromEntries(Object.entries(obj).filter((x) => x[0] != key));
 console.log(res);
 
 //Filter object properties by key in ES6
 const raw = {
-  item1: { key: 'sdfd', value:'sdfd' },
-  item2: { key: 'sdfd', value:'sdfd' },
-  item3: { key: 'sdfd', value:'sdfd' }
+  item1: { key: "sdfd", value: "sdfd" },
+  item2: { key: "sdfd", value: "sdfd" },
+  item3: { key: "sdfd", value: "sdfd" },
 };
 
-const allowed = ['item1', 'item3'];
+const allowed = ["item1", "item3"];
 
 const filtered = Object.keys(raw)
-  .filter(key => allowed.includes(key))
+  .filter((key) => allowed.includes(key))
   .reduce((obj, key) => {
     obj[key] = raw[key];
     return obj;
   }, {});
 
 console.log(filtered);
-
-
 
 //How can I remove a specific item from an array?
 
@@ -577,79 +577,74 @@ if (index > -1) {
 }
 
 // array = [2, 9]
-console.log(array); 
+console.log(array);
 
 // Start form here
 // Given an array find a pair such that it sums to a given number
-let nums = [2, 7, 10, 1, 11, 15, 9]
-let target = 11
-let numsMap = new Map()
+let nums = [2, 7, 10, 1, 11, 15, 9];
+let target = 11;
+let numsMap = new Map();
 let pairs = nums.reduce((acc, num) => {
-  let numToFind = target - num
+  let numToFind = target - num;
   if (numsMap.get(numToFind)) {
-    return [...acc, [num, numToFind]]
+    return [...acc, [num, numToFind]];
   } else {
-    numsMap.set(num, true)
-    return [...acc]
+    numsMap.set(num, true);
+    return [...acc];
   }
-}, [])
+}, []);
 
-console.log("Pairs ", pairs)
-
+console.log("Pairs ", pairs);
 
 //JavaScript equivalent of Python's format() function?
 
 String.prototype.format = function () {
-  var i = 0, args = arguments;
+  var i = 0,
+    args = arguments;
   return this.replace(/{}/g, function () {
-    return typeof args[i] != 'undefined' ? args[i++] : '';
+    return typeof args[i] != "undefined" ? args[i++] : "";
   });
 };
 
-var bar1 = 'foobar',
-    bar2 = 'jumped',
-    bar3 = 'dog';
+var bar1 = "foobar",
+  bar2 = "jumped",
+  bar3 = "dog";
 
-'The lazy {} {} over the {}'.format(bar3, bar2, bar1);
-
+"The lazy {} {} over the {}".format(bar3, bar2, bar1);
 
 //The Intl.RelativeTimeFormat object enables language-sensitive relative time formatting.
 
-const rtf1 = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
+const rtf1 = new Intl.RelativeTimeFormat("en", { style: "narrow" });
 
-console.log(rtf1.format(3, 'quarter'));
+console.log(rtf1.format(3, "quarter"));
 //expected output: "in 3 qtrs."
 
-console.log(rtf1.format(-1, 'day'));
+console.log(rtf1.format(-1, "day"));
 //expected output: "1 day ago"
 
-const rtf2 = new Intl.RelativeTimeFormat('es', { numeric: 'auto' });
+const rtf2 = new Intl.RelativeTimeFormat("es", { numeric: "auto" });
 
-console.log(rtf2.format(2, 'day'));
+console.log(rtf2.format(2, "day"));
 //expected output: "pasado mañana"
-
 
 ////////////////////////////////////////////////
 
-
-let sum = a => b => b ? sum(a + b) : a;
+let sum = (a) => (b) => (b ? sum(a + b) : a);
 
 console.log(sum(10)(20)(3)(4)());
 
-// Check nested object is set 
+// Check nested object is set
 
-function checkNested(obj, level,  ...rest) {
-  if (obj === undefined) return false
-  if (rest.length == 0 && obj.hasOwnProperty(level)) return true
-  return checkNested(obj[level], ...rest)
+function checkNested(obj, level, ...rest) {
+  if (obj === undefined) return false;
+  if (rest.length == 0 && obj.hasOwnProperty(level)) return true;
+  return checkNested(obj[level], ...rest);
 }
 
 // Sunday 1 OCT
-const test = { level1:{ level2:{ level3:'level3'} } };
-checkNested(test, 'level1', 'level2', 'level3'); // true
-checkNested(test, 'level1', 'level2', 'foo'); // fals
-
-
+const test = { level1: { level2: { level3: "level3" } } };
+checkNested(test, "level1", "level2", "level3"); // true
+checkNested(test, "level1", "level2", "foo"); // fals
 
 // Creating number of start that is selected
 const starts = new Array(100).fill(false);
@@ -874,8 +869,7 @@ const modidy = data.map(function (content, index, array) {
     keys.forEach(function (item) {
       content[item] = array[index][item] + array[index - 1][item];
     });
-    
-  } 
+  }
   return content;
 });
 console.log(modidy);
@@ -980,7 +974,6 @@ function arr_diff(a1, a2) {
 
   return diff;
 }
-
 
 /*
  * Create ArrayList from array
@@ -1506,8 +1499,6 @@ for (i = 0, j = array.length; i < j; i += chunk) {
 }
 
 console.log(temparray);
-
-
 
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
