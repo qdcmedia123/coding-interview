@@ -1,3 +1,29 @@
+let dataIn = {
+  id_passport: "bharat@wealthface.com_id_passport_1619517138093.pdf",
+  id_passportd: "bharat@wealthface.com_id_passport_1619517138093.pdf",
+};
+
+for (const [key, value] of Object.entries(dataIn)) {
+  console.log(key);
+}
+
+const data = {
+  id_passport: {
+    fileName: "bharat@wealthface.com_id_passport_1619517138093.pdf",
+    aws_url:
+      "https://ifadocs.s3.eu-central-1.amazonaws.com/bharat@wealthface.com_id_passport_1619517138093.pdf",
+    size_in_mb: 0.00883,
+    extension: "pdf",
+  },
+};
+
+let onlyFileName = Object.fromEntries(
+  // convert to array, map, and then fromEntries gives back the object
+  Object.entries(data).map(([key, value]) => [key, "http" + value.fileName])
+);
+
+// Output { id_passport: 'bharat@wealthface.com_id_passport_1619517138093.pdf' }
+
 //Find the longest common starting substring in a set of strings [closed]
 function sharedStart(array) {
   var A = array.concat().sort(),
@@ -8,6 +34,8 @@ function sharedStart(array) {
   while (i < L && a1.charAt(i) === a2.charAt(i)) i++;
   return a1.substring(0, i);
 }
+
+//sharedStart(['interspecies', 'interstelar', 'interstate'])  //=> 'inters'
 
 //Breaking an Integer to get Maximum Product
 // Reference
@@ -207,6 +235,21 @@ const sumOfEachCategory = Object.keys(result).map((key) => {
   return getSum;
 });
 
+/* You can do in this way as well */
+let map = new Map();
+expenses.map((trx) => {
+  key = trx.category;
+  if (map.get(key)) {
+    map.get(key).push(trx);
+  } else {
+    map.set(key, [trx]);
+  }
+});
+
+// Convert map to object
+const result = Object.fromEntries(map);
+
+/* <You can do in this way as well/> */
 /*
 
   Finding sum of digits of a number until sum becomes single digit
