@@ -1,3 +1,14 @@
+// Find the unique array
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+const values = [1, 2, 4];
+const notChagned = [3, 3, 3];
+const getUnique = values.filter(onlyUnique);
+
+///
+
 let dataIn = {
   id_passport: "bharat@wealthface.com_id_passport_1619517138093.pdf",
   id_passportd: "bharat@wealthface.com_id_passport_1619517138093.pdf",
