@@ -44,5 +44,35 @@ function compareVesrion(v1, v2) {
 	return result;
 }
 
-const ans = compareVesrion("1.0.1.1", "1.0.7");
-console.log(ans);
+const findMedian = (arr) => {
+	if (!arr || arr.length === 0) return [];
+	const r = [];
+	for (var i = 0; i < arr.length; i++) {
+		let result = [];
+		for (var j = 0; j <= i; j++) {
+			result.push(arr[j]);
+		}
+		result = result.sort((a, b) => {
+			return a - b;
+		});
+		console.log(result);
+		r.push(result);
+	}
+
+	const medianArr = [];
+
+	for (var i = 0; i < r.length; i++) {
+		// get get length of array
+		const rIlength = r[i].length;
+		// Get the sum of array
+		const rISum = r[i].reduce((a, b) => {
+			return a + b;
+		}, 0);
+		const median = rISum / rIlength;
+		medianArr.push(median);
+	}
+
+	return medianArr;
+};
+
+console.log(findMedian([5, 10, 15, 9]));

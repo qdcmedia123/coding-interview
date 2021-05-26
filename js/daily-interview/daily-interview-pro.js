@@ -92,7 +92,38 @@ const compareVesrion = (v1, v2) => {
 	return result;
 };
 
+const findMedian = (arr) => {
+	if (!arr || arr.length === 0) return [];
+	const r = [];
+	for (var i = 0; i < arr.length; i++) {
+		let result = [];
+		for (var j = 0; j <= i; j++) {
+			result.push(arr[j]);
+		}
+		result = result.sort((a, b) => {
+			return a - b;
+		});
+		r.push(result);
+	}
+
+	const medianArr = [];
+
+	for (var i = 0; i < r.length; i++) {
+		// get get length of array
+		const rIlength = r[i].length;
+		// Get the sum of array
+		const rISum = r[i].reduce((a, b) => {
+			return a + b;
+		}, 0);
+		const median = rISum / rIlength;
+		medianArr.push(median);
+	}
+
+	return medianArr;
+};
+
 module.exports = {
 	addOneToNumber: addOneToNumber,
 	compareVesrion: compareVesrion,
+	findMedian: findMedian,
 };
