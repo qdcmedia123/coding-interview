@@ -2,6 +2,7 @@ const questions = require("./daily-interview-pro");
 const addOneToNumber = questions.addOneToNumber;
 const compareVesrion = questions.compareVesrion;
 const findMedian = questions.findMedian;
+const missingArry = questions.missingArry;
 /*
 
 Given a non-empty array where each element represents a digit of a non-negative integer, add one to the integer. The most significant digit is at the front of the array and each element in the array contains only one digit. Furthermore, the integer does not have leading zeros, except in the case of the number '0'.*/
@@ -27,4 +28,11 @@ it("compute the median", () => {
 	const median1 = findMedian([5, 10, 15]);
 	expect(median1).toEqual([5, 7.5, 10]);
 	expect(median).toEqual([5, 10, 10, 12.5, 10.6]);
+});
+
+it("will sort the array using bubble sort and find the missing number element in array", () => {
+	const arr = [10, 1, 3, 9, 6, 7];
+	const arr1 = [1, 2, 3, 10];
+	expect(missingArry(arr)).toEqual([ 2, 4, 5, 8 ]);
+	expect(missingArry(arr1)).toEqual([ 4, 5, 6, 7, 8, 9 ]);
 });

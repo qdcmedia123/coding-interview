@@ -122,8 +122,46 @@ const findMedian = (arr) => {
 	return medianArr;
 };
 
+/*
+	<FIND THE MISSING NUMBER FROM THE ARRAY >
+*/
+function bubbleSort(arr) {
+	var done = false;
+
+	while (!done) {
+		done = true;
+		for (var i = 1; i < arr.length; i++) {
+			if (arr[i] > arr[i + 1]) {
+				done = false;
+				var tmp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = tmp;
+			}
+		}
+	}
+	return arr;
+}
+
+function missingArry(arr) {
+	const sortArr = bubbleSort(arr);
+	const missing = [];
+	for (var i = 0; i < sortArr.length - 1; i++) {
+		if (arr[i] + 1 !== arr[i + 1]) {
+			for (var j = arr[i] + 1; j < arr[i + 1]; j++) {
+				missing.push(j);
+			}
+		}
+	}
+	return missing;
+}
+
+/*
+	</FIND THE MISSING NUMBER FROM THE ARRAY >
+*/
+
 module.exports = {
 	addOneToNumber: addOneToNumber,
 	compareVesrion: compareVesrion,
 	findMedian: findMedian,
+	missingArry:missingArry
 };
