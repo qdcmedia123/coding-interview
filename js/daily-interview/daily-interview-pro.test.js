@@ -3,6 +3,8 @@ const addOneToNumber = questions.addOneToNumber;
 const compareVesrion = questions.compareVesrion;
 const findMedian = questions.findMedian;
 const missingArry = questions.missingArry;
+const chainedWords = questions.chainedWords;
+
 /*
 
 Given a non-empty array where each element represents a digit of a non-negative integer, add one to the integer. The most significant digit is at the front of the array and each element in the array contains only one digit. Furthermore, the integer does not have leading zeros, except in the case of the number '0'.*/
@@ -36,3 +38,17 @@ it("will sort the array using bubble sort and find the missing number element in
 	expect(missingArry(arr)).toEqual([ 2, 4, 5, 8 ]);
 	expect(missingArry(arr1)).toEqual([ 4, 5, 6, 7, 8, 9 ]);
 });
+
+it("will return true is word can be chainable", () => {
+	const chainedWord = chainedWords(["apple", "eggs", "snack", "karat", "tuna"]);
+	const chainedWord1 = chainedWords([["abc", "efg", "cde", "ghi", "ija"]]); 
+	expect(chainedWord).toEqual(true);
+	expect(chainedWord1).toEqual(true);
+});
+
+it("will return false is word can be chainable", () => {
+	const chainedWord = chainedWords(["apple", "bggs",]);
+	expect(chainedWord).toEqual(false);
+});
+
+

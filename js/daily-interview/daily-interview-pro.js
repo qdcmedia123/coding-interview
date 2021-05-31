@@ -156,12 +156,26 @@ function missingArry(arr) {
 }
 
 /*
-	</FIND THE MISSING NUMBER FROM THE ARRAY >
+	</If Word is chainable >
 */
+function chainedWords(arr) {
+	var result = [];
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr.length; j++) {
+			let lWordFIndex = arr[i][arr[i].length - 1];
+			let fWordSIndex = arr[j][0];
+			if (lWordFIndex.toLowerCase() === fWordSIndex.toLowerCase()) {
+				result.push(arr[j]);
+			}
+		}
+	}
+	return result.length === arr.length;
+}
 
 module.exports = {
 	addOneToNumber: addOneToNumber,
 	compareVesrion: compareVesrion,
 	findMedian: findMedian,
-	missingArry:missingArry
+	missingArry:missingArry,
+	chainedWords:chainedWords
 };
