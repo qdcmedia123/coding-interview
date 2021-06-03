@@ -48,6 +48,7 @@ const findDuplicateTransactions = (transactions = []) => {
             currentRow.time
           );
         }
+        console.log(diffMax);
         if ((diffMin > 0 && diffMin < 1) || (diffMax > 0 && diffMax < 1)) {
           return true;
         }

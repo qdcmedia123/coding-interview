@@ -1,40 +1,39 @@
-// Find the missing number from this array
-
-const sort = (arr) => {
-	let done = false;
-	while (!done) {
-		done = true;
-		for (var i = 0; i < arr.length; i++) {
-			if (arr[i] > arr[i + 1]) {
-				var tmp = arr[i + 1];
-				arr[i + 1] = arr[i];
-				arr[i] = tmp;
-				done = false;
+const majorityElemn = (arr) => {
+	// Defining max count
+	let maxCount = 0;
+	// Which index is value repeats more
+	let indexElem = null;
+	// Setting array length
+	const arrLength = arr.length;
+	// for loop for the array
+	for (var i = 0; i < arrLength; i++) {
+		// Defining count count will ++ if element repeats
+		let count = 0;
+		// Looping again the array
+		for (var j = 0; j < arrLength; j++) {
+			// Check if current arr[i] is matching rest of the array
+			if (arr[i] === arr[j]) {
+				// Count will increase
+				count++;
+			}
+			// When maxCount is less then count for
+			// Example if count is 0 it will not run 0 < 0 false
+			// 0 < 1 true
+			if (maxCount < count) {
+				// then set the last count in count++
+				maxCount = count;
 			}
 		}
-	}
-	return arr;
-};
-
-const findMissing = (arr) => {
-	const sortArr = sort(arr);
-	const missArr = [];
-	// Loop throgh the each item
-	for (var i = 0; i < arr.length; i++) {
-		// Check if next index is not equal to index + 1
-		if (arr[i] + 1 !== arr[i + 1]) {
-			for (var j = arr[i] + 1; j < arr[i + 1]; j++) {
-				missArr.push(j);
-			}
+		// Have access to the last increased count++
+		// Compare with
+		if (maxCount > arrLength / 2) {
+			indexElem = arr[i];
+			break;
 		}
 	}
-	return missArr;
+	return indexElem ? { element: indexElem, length: maxCount } : null;
 };
-const arr = [10, 1, 3, 9, 6, 7];
-console.log(findMissing(arr));
-const arr = [1, 2, 3, 10];
-console.log(findMissing(arr));
 
-for (var i = 2 + 1; i < 5; i++) {
-	console.log(i);
-}
+const arr = [1, 2, 3, 3, 3];
+
+console.log(majorityElemn(arr));

@@ -4,7 +4,7 @@ const compareVesrion = questions.compareVesrion;
 const findMedian = questions.findMedian;
 const missingArry = questions.missingArry;
 const chainedWords = questions.chainedWords;
-
+const majorityElemn = questions.majorityElemn;
 /*
 
 Given a non-empty array where each element represents a digit of a non-negative integer, add one to the integer. The most significant digit is at the front of the array and each element in the array contains only one digit. Furthermore, the integer does not have leading zeros, except in the case of the number '0'.*/
@@ -35,20 +35,26 @@ it("compute the median", () => {
 it("will sort the array using bubble sort and find the missing number element in array", () => {
 	const arr = [10, 1, 3, 9, 6, 7];
 	const arr1 = [1, 2, 3, 10];
-	expect(missingArry(arr)).toEqual([ 2, 4, 5, 8 ]);
-	expect(missingArry(arr1)).toEqual([ 4, 5, 6, 7, 8, 9 ]);
-});
-
-it("will return true is word can be chainable", () => {
-	const chainedWord = chainedWords(["apple", "eggs", "snack", "karat", "tuna"]);
-	const chainedWord1 = chainedWords([["abc", "efg", "cde", "ghi", "ija"]]); 
-	expect(chainedWord).toEqual(true);
-	expect(chainedWord1).toEqual(true);
+	expect(missingArry(arr)).toEqual([2, 4, 5, 8]);
+	expect(missingArry(arr1)).toEqual([4, 5, 6, 7, 8, 9]);
 });
 
 it("will return false is word can be chainable", () => {
-	const chainedWord = chainedWords(["apple", "bggs",]);
+	const chainedWord = chainedWords(["apple", "bggs"]);
 	expect(chainedWord).toEqual(false);
 });
 
+it("return the { element: 4, length: 5 }", () => {
+	const arr = [3, 3, 4, 2, 4, 4, 2, 4, 4];
+	let findMax = majorityElemn(arr);
+	expect(findMax).toEqual({ element: 4, length: 5 });
+});
 
+it("Its return numll because there is not repeating n / 2 > repeating number", () => {
+	const arr = [3, 3, 4, 2, 4, 4, 2, 4];
+	const arr1 = [1, 2, 3, 3, 3];
+	let findMax = majorityElemn(arr);
+	let findMax1 = majorityElemn(arr1);
+	expect(findMax).toEqual(null);
+	expect(findMax1).toEqual({ element: 3, length: 3 });
+});
